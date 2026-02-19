@@ -1,0 +1,232 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Components/Secondary Nav/Checklists" />
+
+# SecondaryNav Checklists
+
+Please find out what must be checked for a Lexus Kit Stack component in
+[Accessibility Standards](/docs/lexuskit-accessibility-standards--documentation) documentation.
+
+**!!!DO NOT EVER CHANGE FORMAT OF JUST ONE FILE, KEEP THEM IN SYNC!!!**
+
+## Legend
+
+### Marks
+
+- [ ] - (or 🤞) Not tested
+- [x] - Tested and working
+- [🛠️] - Fix required
+- [🚫] - Not applicable
+- [❌] - Will not be fixed (provide reason, except for deprecated items)
+
+### Requirements (except accessibility)
+
+- 💯 - must have or must be tested/validated
+- ⛏️ - must, where applicable
+- ❤️‍🔥 - good to have (appreciated)
+
+### Accessibility requirements
+
+**NOTE:** The below Accessibility list includes set of icons to highlight importance of the rules, please refer
+to the legend in [Accessibility Standards](/docs/lexuskit-accessibility-standards--documentation#legend) to
+understand them.
+
+## Known Exceptions
+
+- None. See [Accessibility Standards](/docs/lexuskit-accessibility-standards--documentation#legend) for format
+
+## Performance
+
+- [ ] 💯 Component allows _children_ or Memoized or not because: ...
+- [ ] 💯 Does not rerender children which are not affected by props/state change
+- [ ] 💯 React DevTools do NOT show **red** (and _yellow_) frames on user action/interaction (mouse, touch, keyboard)
+- [ ] 💯 Does not cause Cumulative Layout Shift (CLS) without user interaction (try to avoid CLS completely)
+
+## Code Quality
+
+### Implementation
+
+- [x] 💯 Supports tree shaking (has `Pure` wrapper or not required)
+- [ ] 💯 Supports SSR (renders same state on first rendering, do not use browser-only API outside useEffect)
+- [ ] 💯 Supports injecting/embedding CMS editing components (you can use DemoEditableText to showcase in stories)
+- [ ] 💯 Supports non-CMS project consumption
+- [ ] 💯 Uses only React build-in state management tools (like useState, useReducer, etc. No external libs)
+- [ ] 💯 Works for all themes and variants (use All-In-One Storybook theme to check)
+- [ ] 💯 Components should not add horizontal scroll bar on 320px width (add max-width: 100% where needed)
+- [ ] ⛏️ Switchable content (eg. Tabs) not removed from DOM and available for Search Engine Bots (SEO optimisation)
+- [ ] ⛏️ Switchable content (eg. Tabs) supports automatic switching to found content when user search on a page
+- [ ] ⛏️ Not modal overlays allows to see focusable elements behind it (eg.: if sticky bar at the bottom, extend page
+      size to be able to scroll to the bottom of the footer, etc)
+- [ ] 💯 No breakpoints (media queries) used in TS/JS
+- [ ] ❤️‍🔥 No breakpoints (media queries) used in CSS (not always possible, but should be a goal)
+- [ ] ⛏️ Exposing `className` prop
+- [ ] ❤️‍🔥 Supports `forwardRef`
+- [ ] ⛏️ Motion incorporated
+- [ ] ⛏️ Does not block native browser behavior (like context menu, text selection, scrolling, etc)
+- [ ] ⛏️ Interaction state incorporated (e.g. idle, hover, pressed, focused, disabled, disabled & focused)
+- [ ] ❤️‍🔥 Component body is less than 40 lines, all logic explained by isolation into functions or custom hooks
+- [ ] ❤️‍🔥 (💯 for form input components) Supports `controlled` and `uncontrolled` usage (applicable to all input
+      and some interaction components)
+- [ ] ❤️‍🔥 Input component supports `defaultValue` prop and **browser value recovery** (when you close and restore tab,
+      or when you switch to another app to get some form details and your device/browser "optimizes" memory and
+      closing/refreshing your tab)
+- [ ] 💯 Component exported in `lib/index.ts`. You do not need to export related types unless necessary
+
+### Testing
+
+- [ ] 💯 Basic unit tests provided
+- [ ] ⛏️ Advanced unit tests provided (interactions)
+- [ ] 💯 All accessibility tests passing in Storybook. WHat is not passing documented below
+
+### Documentation (Storybook)
+
+- [ ] 💯 Documentation block (JSDocs) provided for component and props (visible in Storybook Documentation and code editor)
+- [ ] 💯 Documentation includes usage guide
+- [ ] ⛏️ Documentation describe any not obvious behavior and limitations and requirements to descendants or ancestors
+- [ ] 💯 Storybook stories provided
+- [ ] 💯 Storybook stories have Figma link
+- [ ] 💯 Storybook stories have controls for all primitive (non-object) props
+- [ ] 💯 Stories do not use other LexusKit components (except `Demo...` components, for others consider compositions)
+- [ ] 💯 Storybook stories only use assets which demonstrate rendering properties (like aspect ratio, contrast, etc)
+- [ ] ⛏️ Compositions provided (to showcase combinations with other Lexus Kit components)
+- [ ] ⛏️ Do not render dynamic (self changing) content in stories (like time, random numbers, etc)
+
+## Accessibility
+
+### 1. Perceivable
+
+1.1 Text Alternatives
+
+- [ ] 🛠️ 1.1.1 Non-text Content _[A 2.0]_
+
+  1.2 Time-based Media
+
+- [ ] 🛠️ 1.2.1 Audio-only and Video-only (Prerecorded) _[2.0 A]_
+- [ ] 🛠️ 1.2.2 Captions (Prerecorded) _[2.0 A]_
+- [ ] 🛠️ 1.2.3 Audio Description or Media Alternative (Prerecorded) _[2.0 A]_
+- [ ] ❔ 1.2.4 Captions (Live) _[2.0 AA]_
+- [ ] ❔ 1.2.5 Audio Description (Prerecorded) _[2.0 AA]_
+- [ ] ❔ 1.2.6 Sign Language (Prerecorded) _[2.0 AAA]_
+- [ ] ❔ 1.2.7 Extended Audio Description (Prerecorded) _[2.0 AAA]_
+- [ ] ❔ 1.2.8 Media Alternative (Prerecorded) _[2.0 AAA]_
+- [ ] ❔ 1.2.9 Audio-only (Live) _[2.0 AAA]_
+
+  1.3 Adaptable
+
+- [ ] 🧱 1.3.1 Info and Relationships _[2.0 A]_
+- [ ] 🧱 1.3.2 Meaningful Sequence _[2.0 A]_
+- [ ] 🧱 1.3.3 Sensory Characteristics _[2.0 A]_
+- [ ] ❔ 1.3.4 Orientation _[2.1 AA]_
+- [ ] ❔ 1.3.5 Identify Input Purpose _[2.1 AA]_
+- [ ] ❔ 1.3.6 Identify Purpose _[2.1 AAA]_
+
+  1.4 Distinguishable
+
+- [ ] 💯 1.4.1 Use of Color _[2.0 A]_
+- [ ] 🛠️ 1.4.2 Audio Control _[2.0 A]_
+- [ ] ❔ 1.4.3 Contrast (Minimum) _[2.0 AA]_
+- [ ] ❔ 1.4.4 Resize Text _[2.0 AA]_
+- [ ] ❔ 1.4.5 Images of Text _[2.0 AA]_
+- [ ] ❔ 1.4.6 Contrast (Enhanced) _[2.0 AAA]_
+- [ ] ❔ 1.4.7 Low or No Background Audio _[2.0 AAA]_
+- [ ] ❔ 1.4.8 Visual Presentation _[2.0 AAA]_
+- [ ] ❔ 1.4.9 Images of Text (No Exception) _[2.0 AAA]_
+- [ ] ❔ 1.4.10 Reflow _[2.1 AA]_
+- [ ] ❔ 1.4.11 Non-Text Contrast _[2.1 AA]_
+- [ ] ❔ 1.4.12 Text Spacing _[2.1 AA]_
+- [ ] ❔ 1.4.13 Content on Hover or Focus _[2.1 AA]_
+
+### 2. Operable
+
+2.1 Keyboard Accessible
+
+- [ ] 💯 2.1.1 Keyboard _[2.0 A]_
+- [ ] 🧱 2.1.2 No Keyboard Trap _[2.0 A]_
+- [ ] ❔ 2.1.3 Keyboard (No Exception) _[2.0 AAA]_
+- [ ] 🛠️ 2.1.4 Character Key Shortcuts _[2.1 A]_
+
+  2.2 Enough Time
+
+- [ ] 🛠️ 2.2.1 Timing Adjustable _[2.0 A]_
+- [ ] 💯 2.2.2 Pause, Stop, Hide _[2.0 A]_
+- [ ] ❔ 2.2.3 No Timing _[2.0 AAA]_
+- [ ] ❔ 2.2.4 Interruptions _[2.0 AAA]_
+- [ ] ❔ 2.2.5 Re-authenticating _[2.0 AAA]_
+- [ ] ❔ 2.2.6 Timeouts _[2.1 AAA]_
+
+  2.3 Seizures
+
+- [ ] 💯 2.3.1 Three Flashes or Below Threshold _[2.0 A]_
+- [ ] ❔ 2.3.2 Three Flashes _[2.0 AAA]_
+- [ ] ❔ 2.3.3 Animation from Interactions _[2.1 AAA]_
+
+  2.4 Navigable
+
+- [ ] 🧱 2.4.1 Bypass Blocks _[2.0 A]_
+- [ ] 📃 2.4.2 Page Titled _[2.0 A]_
+- [ ] 💯 2.4.3 Focus Order _[2.0 A]_
+- [ ] ❔ 2.4.4 Link Purpose (In Context) _[2.0 A]_
+- [ ] ❔ 2.4.5 Multiple Ways _[2.0 AA]_
+- [ ] ❔ 2.4.6 Headings and Labels _[2.0 AA]_
+- [ ] ❔ 2.4.7 Focus Visible _[2.0 AA]_
+- [ ] ❔ 2.4.8 Location _[2.0 AAA]_
+- [ ] ❔ 2.4.9 Link Purpose (Link Only) _[2.0 AAA]_
+- [ ] ❔ 2.4.10 Section Headings _[2.0 AAA]_
+- [ ] ❔ 2.4.11 Focus Not Obscured (Minimum) _[2.2 AA]_
+- [ ] ❔ 2.4.12 Focus Not Obscured (Enhanced) _[2.2 AAA]_
+- [ ] ❔ 2.4.13 Focus Appearance _[2.2 AAA]_
+
+  2.5 Input Modalities
+
+- [ ] 💯 2.5.1 Pointer Gestures _[2.1 A]_
+- [ ] 💯 2.5.2 Pointer Cancellation _[2.1 A]_
+- [ ] 💯 2.5.3 Label in Name _[2.1 A]_
+- [ ] 💯 2.5.4 Motion Actuation _[2.1 A]_
+- [ ] ❔ 2.5.5 Target Size _[2.1 AAA]_
+- [ ] ❔ 2.5.6 Concurrent Input Mechanisms _[2.1 AAA]_
+- [ ] ❔ 2.5.7 Dragging Movements _[2.2 AA]_
+- [ ] ❔ 2.5.8 Target Size (Minimum) _[2.2 AA]_
+
+### 3. Understandable
+
+3.1 Readable
+
+- [ ] 📃 3.1.1 Language of Page _[2.0 A]_
+- [ ] ❌ 3.1.2 Language of Parts _[2.0 AA]_
+- [ ] ❔ 3.1.3 Unusual Words _[2.0 AAA]_
+- [ ] ❔ 3.1.4 Abbreviations _[2.0 AAA]_
+- [ ] ❔ 3.1.5 Reading Level _[2.0 AAA]_
+- [ ] ❔ 3.1.6 Pronunciation _[2.0 AAA]_
+
+  3.2 Predictable
+
+- [ ] 💯 3.2.1 On Focus _[2.0 A]_
+- [ ] 🧱 3.2.2 On Input _[2.0 A]_
+- [ ] ❔ 3.2.3 Consistent Navigation _[2.0 AA]_
+- [ ] ❔ 3.2.4 Consistent Identification _[2.0 AA]_
+- [ ] ❔ 3.2.5 Change on Request _[2.0 AAA]_
+- [ ] 🧱 3.2.6 Consistent Help _[2.2 A]_
+
+  3.3 Input Assistance
+
+- [ ] 💯 3.3.1 Error Identification _[2.0 A]_
+- [ ] 🛠️ 3.3.2 Labels or Instructions _[2.0 A]_
+- [ ] ❔ 3.3.3 Error Suggestion _[2.0 AA]_
+- [ ] ❔ 3.3.4 Error Prevention (Legal, Financial, Data) _[2.0 AA]_
+- [ ] ❔ 3.3.5 Help _[2.0 AAA]_
+- [ ] ❔ 3.3.6 Error Prevention (All) _[2.0 AAA]_
+- [ ] 🛠️ 3.3.7 Redundant Entry _[2.2 A]_
+- [ ] ❔ 3.3.8 Accessible Authentication (Minimum) _[2.2 AA]_
+- [ ] ❔ 3.3.9 Accessible Authentication (Enhanced) _[2.2 AAA]_
+
+### 4. Robust
+
+4.1 Compatible
+
+- [❌] ❌ 4.1.1 Parsing (Obsolete and removed) _[2.0 (removed in 2.2) A]_
+- [ ] 💯 4.1.2 Name, Role, Value _[2.0 A]_
+- [ ] ❔ 4.1.3 Status Messages _[2.1 AA]_
+
+## General
+
+- [ ] 💯 This list is done! 🥳
