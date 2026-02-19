@@ -1,0 +1,61 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+.navbar {
+  position: relative;
+  z-index: 1; // stacking context for ::before
+  display: flex; // Sync with inline style
+  align-items: stretch;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+    opacity: 0.5;
+    border-bottom: 1px solid var(--ld-color-legacy-lexus-brand-white);
+  }
+}
+
+.navbarContainer {
+  flex-grow: 1;
+  display: flex; // Sync with inline style
+  align-items: stretch;
+  padding-left: var(--primary-nav-modal-container-padding);
+  padding-right: 0;
+
+  &.enablePadding {
+    padding-right: calc(
+      var(--primary-nav-modal-container-padding) - var(
+          --primary-nav-navbar-item-regular-padding-horizontal-last
+        )
+    );
+  }
+}
+
+.navbarHeaderContainer {
+  align-self: center;
+  flex-grow: 1;
+  display: flex; // Sync with inline style
+  height: 100%;
+  align-items: center;
+}
+
+.navbarItemsContainer {
+  position: relative;
+  display: flex; // Sync with inline style
+  flex-direction: row;
+  align-items: stretch;
+  height: var(--primary-nav-navbar-height);
+
+  // Only navbar items should overlap .navbar's bottom border (not mobile menu, not encore)
+  z-index: 1;
+}
+
+.navbarFooterContainer {
+  display: flex; // Sync with inline style
+  flex-direction: row;
+  align-items: stretch;
+}

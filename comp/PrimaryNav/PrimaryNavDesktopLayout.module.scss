@@ -1,0 +1,152 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+@use "../../styles/modules/breakpoints/mixins" as *;
+@use "../../styles/modules/breakpoints/variables" as *;
+@use "@tmca/lexus-dls/css/component/menu.module";
+
+.primaryNavDesktopLayout {
+  // TODO: remove variables when tokens are ready https://toyotaau.atlassian.net/browse/LK-106
+  --primary-nav-desktop-layout-grid-cell-4-col-width: calc((100% + 39px) / 12 * 4 - 39px);
+  --primary-nav-desktop-layout-grid-cell-8-col-width: calc((100% + 39px) / 12 * 8 - 39px);
+
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  position: relative;
+}
+
+.closeButtonContainer {
+  @extend #{".ldMenu"};
+  position: fixed;
+  left: 0;
+  padding-left: var(--primary-nav-modal-container-padding);
+  right: var(--primary-nav-modal-scrollbar-width-if-present);
+  z-index: var(--lk-menu-close-button-container-z-index);
+}
+
+.primaryNavDesktopLayoutLevels {
+  min-height: var(
+    --primary-nav-desktop-layout-min-height-dynamic,
+    calc(100vh - var(--primary-nav-bottom-dynamic))
+  );
+  // required instead of flex-grow: 1 to prevent jumpiness during modal switch transitions
+  position: relative; // anchor for .level2Layout
+  display: flex;
+  flex-direction: row;
+}
+
+.level1Layout {
+  display: flex;
+  flex-direction: column;
+
+  padding-top: var(--primary-nav-desktop-layout-padding-top);
+  flex: 0 0 100%;
+}
+
+.level1LayoutBody {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.isLevel2LayoutAvailable .level1LayoutBody {
+  width: var(--primary-nav-desktop-layout-grid-cell-4-col-width);
+}
+
+.level1LayoutBody + .level1LayoutFooter {
+  margin-top: var(--primary-nav-desktop-layout-level-1-body-footer-spacing);
+}
+
+.level1LayoutFooter {
+  margin-left: calc(-1 * var(--primary-nav-modal-container-padding));
+  margin-right: calc(-1 * var(--primary-nav-modal-container-padding));
+  display: flex;
+  flex-direction: column;
+}
+
+.level2Layout {
+  position: absolute;
+  width: var(--primary-nav-desktop-layout-grid-cell-8-col-width);
+  top: 0;
+  left: auto;
+  right: 0;
+  min-height: calc(100vh - var(--primary-nav-bottom-dynamic));
+  padding: var(--primary-nav-desktop-layout-level-2-padding);
+  flex-grow: 1;
+
+  z-index: 2; // new stacking context for ::after, higher z-index than close button background
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+    background: var(--ld-color-legacy-deepblue-light);
+  }
+
+  &.isPaddingSuppressed {
+    padding: 0;
+  }
+
+  &.isBackgroundSuppressed {
+    &::after {
+      background: none;
+    }
+  }
+
+  &.isIgnoringContainerPaddingRight {
+    width: calc(
+      var(--primary-nav-desktop-layout-grid-cell-8-col-width) +
+        var(--primary-nav-modal-container-padding)
+    );
+    margin-right: calc(var(--primary-nav-modal-container-padding) * -1);
+  }
+
+  display: none;
+}
+
+// Desktop layout level 2 animations -- it opens, it closes, but it does not switch between contents
+
+.level2OpenCloseEnter {
+  opacity: 0;
+  transform: translateX(50px);
+  display: block;
+}
+
+.level2OpenCloseEnterActive {
+  transition:
+    opacity var(--primary-nav-modal-transition-duration) ease-in-out,
+    transform var(--primary-nav-modal-transition-duration) ease-out;
+  opacity: 1;
+  transform: translateX(0);
+  display: block;
+}
+
+.level2OpenCloseEnterDone {
+  display: block;
+}
+
+.level2OpenCloseExit {
+  opacity: 1;
+  display: block;
+}
+
+.level2OpenCloseExitActive {
+  transition: opacity var(--primary-nav-modal-transition-duration) ease-in-out;
+  opacity: 0;
+  display: block;
+}
+
+.level2OpenCloseExitDone {
+  display: none;
+  opacity: 0; // seems redundant, but this is required to hide children with visibility: visible;
+  pointer-events: none; // this supports the line above
+}

@@ -1,0 +1,50 @@
+@use "./primary-nav-mixins" as *;
+@use "../../styles/modules/css-resets/mixins" as *;
+@use "@tmca/lexus-dls/css/component/box.module";
+
+.closeButton {
+  @include reset-button();
+  // TODO: remove variables when tokens are ready https://toyotaau.atlassian.net/browse/LK-106
+  --primary-nav-close-button-top: 16px;
+  --primary-nav-close-button-icon-size: 45px;
+  --primary-nav-close-button-icon-label-spacing: 8px;
+
+  position: absolute;
+  top: var(--primary-nav-close-button-top);
+  cursor: pointer;
+  display: flex;
+  width: min-content;
+  align-items: center;
+  z-index: 1;
+}
+
+.closeButtonIcon {
+  position: relative;
+  z-index: 1; // new stacking context for ::before
+  width: var(--primary-nav-close-button-icon-size);
+  height: var(--primary-nav-close-button-icon-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+    opacity: 0.25;
+    background: var(--ld-color-legacy-lexus-brand-white);
+    border-radius: 9999px;
+  }
+}
+
+.closeButtonIcon + .closeButtonLabel {
+  margin-left: var(--primary-nav-close-button-icon-label-spacing);
+}
+
+.closeButtonLabel {
+  @include primary-nav-tg-navbar-item-regular-label;
+}

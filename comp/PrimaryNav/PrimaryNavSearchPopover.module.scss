@@ -1,0 +1,43 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+@use "@tmca/lexus-dls/css/component/box.module";
+@use "./primary-nav-css-custom-props" as *;
+
+.searchInputContainer {
+  position: absolute;
+  top: var(--primary-nav-navbar-height);
+  left: 0;
+  right: 0;
+  background-color: var(--ld-color-legacy-deepblue-darkest);
+  animation: lk-private-slideIn 0.5s ease forwards;
+}
+
+.searchInputContent {
+  width: 100%;
+  margin: auto;
+  background-color: inherit;
+}
+
+.searchInputFormSection {
+  background-color: inherit;
+}
+
+.hasMargin {
+  @extend #{".ldBox"};
+  margin: 0 var(--ld-c-box-pad-scaled-default);
+}
+
+.isMobile {
+  position: static;
+  background-color: inherit;
+  animation: none;
+}
+
+@keyframes lk-private-slideIn {
+  from {
+    transform: translateY(-20%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}

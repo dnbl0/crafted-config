@@ -1,0 +1,75 @@
+@use "../primary-nav-mixins" as *;
+@use "../../../styles/modules/css-resets/mixins" as *;
+
+.background {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.backLink {
+  @include reset-button();
+  --primary-nav-modal-generic-back-link-offset-left: 0;
+  --primary-nav-modal-generic-back-link-icon-label-spacing: 8px;
+
+  display: flex;
+  align-items: center;
+  margin-left: var(--primary-nav-modal-generic-back-link-offset-left);
+  gap: var(--primary-nav-modal-generic-back-link-icon-label-spacing);
+}
+
+.backLinkIcon {
+  display: flex;
+}
+
+.backLinkLabel {
+  @include primary-nav-tg-item;
+}
+
+// Desktop layout level 2 content animations -- it switches between contents by layering enters and exits
+// of two different modal contents' both on-screen at once for a short time
+
+.desktopLayoutLevel2Container {
+  display: flex;
+  flex-direction: row;
+}
+
+.desktopLayoutLevel2Content {
+  --desktop-layout-level-2-content-display: block;
+  width: 100%;
+  margin-right: -100%;
+  display: none;
+}
+
+.desktopLayoutLevel2SwitchEnter {
+  opacity: 0;
+  display: var(--desktop-layout-level-2-content-display);
+}
+
+.desktopLayoutLevel2SwitchEnterActive {
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  transition: opacity var(--primary-nav-modal-content-transition-duration) ease-in-out;
+  opacity: 1;
+  transform: translateX(0);
+  display: var(--desktop-layout-level-2-content-display);
+}
+
+.desktopLayoutLevel2SwitchEnterDone {
+  display: var(--desktop-layout-level-2-content-display);
+}
+
+.desktopLayoutLevel2SwitchExit {
+  opacity: 1;
+  display: var(--desktop-layout-level-2-content-display);
+}
+
+.desktopLayoutLevel2SwitchExitActive {
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  transition: opacity var(--primary-nav-modal-content-transition-duration) ease-in-out;
+  opacity: 0;
+  display: var(--desktop-layout-level-2-content-display);
+}
+
+.desktopLayoutLevel2SwitchExitDone {
+  display: none;
+}

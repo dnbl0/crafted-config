@@ -1,0 +1,78 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+@use "../../../styles/modules/breakpoints/mixins" as *;
+@use "../../../styles/modules/breakpoints/variables" as *;
+@use "../../../styles/modules/ornaments/senkei/mixins" as *;
+@use "../../../styles/modules/css-resets/mixins" as *;
+@use "../primary-nav-mixins" as *;
+
+.primaryNavStatic {
+  // TODO: remove variables when tokens are ready https://toyotaau.atlassian.net/browse/LK-105
+  --primary-nav-static-link-item-gap: 24px 40px;
+
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    opacity: 0.5;
+    border-top: 1px solid var(--ld-color-legacy-lexus-brand-white);
+  }
+  padding: var(--primary-nav-footer-padding);
+
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-105
+  color: var(--ld-color-legacy-lexus-brand-white);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--primary-nav-static-link-item-gap);
+}
+
+.primaryNavStaticHorizontal {
+  @include breakpoint($breakpoint-lg-min) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-105
+    margin-right: var(--primary-nav-static-spacing-for-small);
+  }
+}
+
+.primaryNavStaticItem {
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-105
+  margin-top: var(--primary-nav-static-item-spacing);
+  width: fit-content;
+}
+
+.primaryNavItemText {
+  @include reset-button();
+  @include primary-nav-tg-static-link;
+  text-decoration: none;
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-105
+  display: block;
+  cursor: pointer;
+  @include ornaments-senkei-base("after");
+  color: var(--ld-color-legacy-lexus-brand-white);
+
+  &:hover {
+    color: var(--ld-color-legacy-lexus-brand-white);
+    @include ornaments-senkei-apply-expanded("after");
+  }
+}
+
+.primaryNavIcon {
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-105
+  fill: var(--ld-color-legacy-lexus-brand-white);
+  display: block;
+}
+
+.primaryNavIconHorizontal {
+  @include breakpoint($breakpoint-lg-min) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

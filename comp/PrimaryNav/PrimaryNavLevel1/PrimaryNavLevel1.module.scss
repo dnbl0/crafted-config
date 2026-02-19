@@ -1,0 +1,76 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+@use "../primary-nav-mixins" as *;
+@use "../../../styles/modules/ornaments/senkei/mixins" as *;
+@use "../../../styles/modules/css-resets/mixins" as *;
+
+.navbarItems {
+  @include ornaments-css-custom-props;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  position: relative;
+  padding-right: calc(
+    var(--primary-nav-navbar-item-regular-padding-horizontal-last) - var(
+        --primary-nav-navbar-item-regular-padding-horizontal
+      )
+  );
+}
+
+.navbarItems:hover .label {
+  opacity: 0.7;
+}
+
+.navbarItem {
+  @include reset-button();
+  color: var(--ld-color-legacy-lexus-brand-white);
+  position: relative;
+  cursor: pointer;
+  padding-left: var(--primary-nav-navbar-item-regular-padding-horizontal);
+  padding-right: var(--primary-nav-navbar-item-regular-padding-horizontal);
+  @include primary-nav-tg-navbar-item-regular-label;
+  text-align: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    border-bottom: var(--ornaments-senkei-default-line-size) solid
+      var(--ornaments-senkei-border-color);
+    opacity: 0;
+    transition:
+      opacity var(--primary-navbar-item-senkei-transition-duration) ease-in-out,
+      width var(--primary-navbar-item-senkei-transition-duration) ease-in-out;
+  }
+
+  .label {
+    color: var(--ld-color-legacy-lexus-brand-white);
+    transition: opacity var(--primary-navbar-item-label-transition-duration) ease-in-out;
+  }
+
+  &.isActive,
+  &:hover,
+  &.navbarItemHovered {
+    .label {
+      opacity: 1;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.navbarItem.isActive {
+  &::after {
+    width: calc(100% - 2 * var(--primary-nav-navbar-item-regular-padding-horizontal));
+  }
+}
+
+.quickBookButton {
+  align-self: center;
+  padding: var(--primary-nav-navbar-item-regular-padding-horizontal);
+}

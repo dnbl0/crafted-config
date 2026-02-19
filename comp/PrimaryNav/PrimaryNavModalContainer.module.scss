@@ -1,0 +1,25 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+@use "../../styles/modules/breakpoints/mixins" as *;
+@use "../../styles/modules/breakpoints/variables" as *;
+
+.container {
+  padding-left: var(--primary-nav-modal-container-padding);
+  padding-right: var(--primary-nav-modal-container-padding);
+}
+
+.parentIsFlexbox {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .containerInner {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+}
+
+.fillParentHeight {
+  flex-grow: 1;
+}

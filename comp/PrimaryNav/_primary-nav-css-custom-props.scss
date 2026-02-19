@@ -1,0 +1,107 @@
+@use "../../styles/modules/breakpoints/mixins" as *;
+@use "../../styles/modules/breakpoints/variables" as *;
+@use "./primary-nav-mixins" as *;
+
+@mixin primary-nav-css-custom-props {
+  // TODO: remove variables when tokens are ready https://toyotaau.atlassian.net/browse/LK-106
+  --primary-nav-navbar-z-index: 2;
+
+  --primary-nav-modal-z-index: 3;
+  @include breakpoint($breakpoint-lg-min) {
+    --primary-nav-modal-z-index: 1;
+  }
+
+  --primary-nav-navbar-height: 68px;
+  --primary-nav-container-shadow-height: calc(100% + 124px - var(--primary-nav-navbar-height));
+
+  // Javascript updates these CSS custom props when PrimaryNavContainer resizes
+  --primary-nav-top-dynamic: 0;
+  --primary-nav-bottom-dynamic: var(--primary-nav-navbar-height);
+
+  --primary-navbar-item-senkei-transition-duration: 0.3s;
+  --primary-navbar-item-label-transition-duration: 0.3s;
+  --primary-navbar-item-fill-transition-duration: 0.3s;
+
+  --primary-nav-navbar-item-regular-padding-horizontal: #{clamp-builder(
+      $breakpoint-lg-min,
+      1440px,
+      8px,
+      16px
+    )};
+
+  --primary-nav-navbar-item-regular-padding-horizontal-last: #{clamp-builder(
+      $breakpoint-lg-min,
+      1440px,
+      24px,
+      40px
+    )};
+
+  --primary-nav-navbar-item-authenticated-label-background: #d9d9d9;
+  --primary-nav-navbar-logo-padding: 24px;
+  --primary-nav-navbar-logo-focus-padding: -15px;
+
+  --primary-nav-tg-navbar-item-regular-font-size: 12px;
+  --primary-nav-tg-navbar-item-regular-line-height: 12px;
+  --primary-nav-tg-navbar-item-regular-letter-spacing: 1.44px;
+  --primary-nav-tg-navbar-item-regular-text-transform: uppercase;
+  --primary-nav-tg-navbar-item-regular-font-weight: 400;
+
+  --primary-nav-tg-navbar-item-special-font-size: 12px;
+  --primary-nav-tg-navbar-item-special-line-height: 16px;
+  --primary-nav-tg-navbar-item-special-letter-spacing: 1px;
+  --primary-nav-tg-navbar-item-special-text-transform: uppercase;
+  --primary-nav-tg-navbar-item-special-font-weight: 400;
+
+  --primary-nav-tg-static-link-font-size: 12px;
+  --primary-nav-tg-static-link-line-height: 12px;
+  --primary-nav-tg-static-link-letter-spacing: 1.44px;
+  --primary-nav-tg-static-link-text-transform: uppercase;
+
+  --primary-nav-tg-item-font-size: 23px;
+  --primary-nav-tg-item-line-height: 26.45px;
+  --primary-nav-tg-item-font-weight: 300;
+
+  @include breakpoint($breakpoint-lg-min) {
+    --primary-nav-tg-item-font-size: 26px;
+    --primary-nav-tg-item-line-height: 29.9px;
+  }
+
+  --primary-nav-modal-transition-duration: 0.3s;
+  --primary-nav-modal-content-transition-duration: 0.3s;
+  --primary-nav-modal-container-padding: 24px;
+
+  @include breakpoint($breakpoint-lg-min) {
+    --primary-nav-modal-container-padding: #{clamp-builder($breakpoint-sm-max, 1440px, 40px, 80px)};
+  }
+
+  --primary-nav-desktop-layout-padding-top: 120px;
+  --primary-nav-desktop-layout-level-1-body-footer-spacing: 40px;
+  --primary-nav-desktop-layout-level-2-padding: var(--primary-nav-desktop-layout-padding-top) 80px;
+
+  --primary-nav-mobile-page-padding-top: 120px;
+  --primary-nav-mobile-page-level-2-header-padding-bottom: 40px;
+  --primary-nav-mobile-page-level-2-footer-and-children-padding-top: 40px;
+  --primary-nav-mobile-page-level-2-children-footer-spacing: 40px;
+  --primary-nav-mobile-items-container-padding: 40px;
+
+  --primary-nav-items-spacing-between: 40px;
+
+  --primary-nav-footer-padding: 40px;
+
+  --primary-nav-modal-dealer-details-visible-max-height: 1650px;
+
+  @include breakpoint($breakpoint-lg-min) {
+    --primary-nav-footer-padding: var(--primary-nav-modal-container-padding);
+  }
+
+  --primary-nav-navbar-item-special-max-width: 89px;
+  --primary-nav-navbar-item-special-background-transition:
+    background var(--primary-navbar-item-fill-transition-duration) ease-in-out,
+    color var(--primary-navbar-item-fill-transition-duration) ease-in-out;
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+  --primary-nav-navbar-item-special-background-hover: var(--ld-color-legacy-deepblue-light);
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+  --primary-nav-navbar-item-special-background-active: var(--ld-color-legacy-smoke-lightest);
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+  --primary-nav-navbar-item-special-border-left: 1px solid var(--ld-color-legacy-lexus-brand-white);
+}

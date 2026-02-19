@@ -1,0 +1,38 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+@use "../../styles/modules/breakpoints/mixins" as *;
+@use "../../styles/modules/breakpoints/variables" as *;
+
+@mixin primary-nav-tg-navbar-item-regular-label() {
+  font-size: var(--primary-nav-tg-navbar-item-regular-font-size);
+  line-height: var(--primary-nav-tg-navbar-item-regular-line-height);
+  letter-spacing: var(--primary-nav-tg-navbar-item-regular-letter-spacing);
+  text-transform: var(--primary-nav-tg-navbar-item-regular-text-transform);
+  font-weight: var(--primary-nav-tg-navbar-item-regular-font-weight);
+}
+
+@mixin primary-nav-tg-navbar-item-special-label() {
+  font-size: var(--primary-nav-tg-navbar-item-special-font-size);
+  line-height: var(--primary-nav-tg-navbar-item-special-line-height);
+  letter-spacing: var(--primary-nav-tg-navbar-item-special-letter-spacing);
+  text-transform: var(--primary-nav-tg-navbar-item-special-text-transform);
+  font-weight: var(--primary-nav-tg-navbar-item-special-font-weight);
+}
+
+@mixin primary-nav-tg-static-link() {
+  font-size: var(--primary-nav-tg-static-link-font-size);
+  line-height: var(--primary-nav-tg-static-link-line-height);
+  letter-spacing: var(--primary-nav-tg-static-link-letter-spacing);
+  text-transform: var(--primary-nav-tg-static-link-text-transform);
+}
+
+@mixin primary-nav-tg-item() {
+  font-size: var(--primary-nav-tg-item-font-size);
+  font-weight: var(--primary-nav-tg-item-font-weight);
+  line-height: var(--primary-nav-tg-item-line-height);
+}
+
+@mixin primary-nav-tg-items() {
+  font-size: var(--primary-nav-tg-items-font-size);
+  line-height: var(--primary-nav-tg-items-line-height);
+  text-transform: var(--primary-nav-tg-items-text-transform);
+}

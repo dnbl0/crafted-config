@@ -1,0 +1,9 @@
+@use "../../styles/modules/global/mixins" as *;
+
+@include global-style-scope() {
+  display: contents;
+}
+
+.lkTheme {
+  display: contents;
+}

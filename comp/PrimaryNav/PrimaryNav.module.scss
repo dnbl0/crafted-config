@@ -1,0 +1,202 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+@use "../../styles/modules/breakpoints/variables" as *;
+@use "../../styles/modules/breakpoints/mixins" as *;
+@use "./primary-nav-css-custom-props" as *;
+@use "../../styles/modules/css-resets/mixins" as *;
+
+.primaryNav {
+  @include primary-nav-css-custom-props;
+
+  @include breakpoint($breakpoint-lg-min) {
+    position: relative; // positioning context for .modal (keeps .modal from overlapping e.g. a site banner)
+    z-index: 1; // new stacking context for .modal
+  }
+}
+
+.navbarWrapper {
+  position: relative; // enable z-index
+  z-index: var(--primary-nav-navbar-z-index);
+}
+
+.logo {
+  display: flex;
+  height: 100%;
+  align-items: center;
+
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .logoLink img {
+    width: 100%;
+  }
+
+  // to keep the layout consistent
+  line-height: 0;
+}
+
+.modal {
+  --primary-nav-modal-display: flex;
+  --primary-nav-modal-padding-top: 0;
+  --primary-nav-modal-height: 100vh;
+
+  @include breakpoint($breakpoint-lg-min) {
+    --primary-nav-modal-padding-top: var(--primary-nav-navbar-height);
+    --primary-nav-modal-height: calc(100vh - var(--primary-nav-top-dynamic));
+  }
+
+  position: absolute;
+  z-index: var(--primary-nav-modal-z-index);
+
+  display: none;
+  flex-direction: column;
+  border-top: var(--primary-nav-modal-padding-top) solid var(--ld-color-legacy-deepblue-dark);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--primary-nav-modal-height);
+
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+  background-color: var(--ld-color-legacy-deepblue-dark);
+  color: var(--ld-color-legacy-lexus-brand-white);
+}
+
+// Modal animations -- it opens, it closes, but it does not switch between modal contents
+
+.modalOpenCloseEnter {
+  opacity: 0;
+  @include breakpoint(null, $breakpoint-sm-max) {
+    transform: translateX(50px);
+  }
+  display: var(--primary-nav-modal-display);
+}
+
+.modalOpenCloseEnterActive {
+  transition:
+    opacity var(--primary-nav-modal-transition-duration) ease-in-out,
+    transform var(--primary-nav-modal-transition-duration) ease-out;
+  opacity: 1;
+  transform: translateX(0);
+  display: var(--primary-nav-modal-display);
+}
+
+.modalOpenCloseEnterDone {
+  display: var(--primary-nav-modal-display);
+}
+
+.modalOpenCloseExit {
+  opacity: 1;
+  display: var(--primary-nav-modal-display);
+}
+
+.modalOpenCloseExitActive {
+  transition: opacity var(--primary-nav-modal-transition-duration) ease-in-out;
+  opacity: 0;
+}
+
+.modalOpenCloseExitDone {
+  display: none;
+}
+
+.closeButtonContainer {
+  position: fixed;
+  z-index: 1;
+}
+
+.allModalsContentScrollContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.allModalsContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.modalContent {
+  --primary-nav-modal-content-display: flex;
+  display: none;
+  width: 100%;
+  margin-right: -100%;
+  flex-direction: column;
+}
+
+// Modal content animations -- it switches between modal contents by layering enters and exits
+// of two different modal contents' both on-screen at once for a short time
+
+.modalContentSwitchEnter {
+  opacity: 0;
+  @include breakpoint(null, $breakpoint-sm-max) {
+    transform: translateX(50px);
+  }
+  display: var(--primary-nav-modal-content-display);
+}
+
+.modalContentSwitchEnterActive {
+  transition:
+    opacity var(--primary-nav-modal-content-transition-duration) ease-in-out,
+    transform var(--primary-nav-modal-content-transition-duration) ease-out;
+  opacity: 1;
+  transform: translateX(0);
+  display: var(--primary-nav-modal-content-display);
+}
+
+.modalContentSwitchEnterDone {
+  display: var(--primary-nav-modal-content-display);
+}
+
+.modalContentSwitchExit {
+  opacity: 1;
+  display: var(--primary-nav-modal-content-display);
+}
+
+.modalContentSwitchExitActive {
+  transition: opacity var(--primary-nav-modal-content-transition-duration) ease-in-out;
+  opacity: 0;
+  display: var(--primary-nav-modal-content-display);
+}
+
+.modalContentSwitchExitDone {
+  display: none;
+}
+
+// Modal content animations (backlink clicked)
+
+.modalContentSwitchBackEnter {
+  opacity: 0;
+  display: var(--primary-nav-modal-content-display);
+}
+
+.modalContentSwitchBackEnterActive {
+  transition: opacity var(--primary-nav-modal-content-transition-duration) ease-in-out;
+  opacity: 1;
+  display: var(--primary-nav-modal-content-display);
+}
+
+.modalContentSwitchBackEnterDone {
+  display: var(--primary-nav-modal-content-display);
+}
+
+.modalContentSwitchBackExit {
+  opacity: 1;
+  display: var(--primary-nav-modal-content-display);
+}
+
+.modalContentSwitchBackExitActive {
+  transition: opacity var(--primary-nav-modal-content-transition-duration) ease-in-out;
+  opacity: 0;
+  display: var(--primary-nav-modal-content-display);
+}
+
+.modalContentSwitchBackExitDone {
+  display: none;
+}

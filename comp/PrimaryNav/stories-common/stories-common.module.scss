@@ -1,0 +1,48 @@
+@use "../../../styles/modules/breakpoints/mixins" as *;
+@use "../../../styles/modules/breakpoints/variables" as *;
+@use "../primary-nav-css-custom-props" as *;
+
+.mockPrimaryNavContainer,
+.primaryNavCustomPropsAndColours {
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+  background-color: var(--ld-color-legacy-deepblue-darkest);
+  color: var(--ld-color-legacy-lexus-brand-white);
+}
+
+.mockPrimaryNavContainer {
+  position: absolute; // activate z-index, overlap page content
+  top: 0;
+  left: 0;
+  right: 0;
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  z-index: var(--lk-primary-nav-z-index);
+}
+
+.primaryNavCustomPropsAndColours {
+  @include primary-nav-css-custom-props;
+}
+
+.primaryNavNavbarProxy {
+  display: flex;
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  height: var(--primary-nav-navbar-height);
+}
+
+.primaryNavModalProxy {
+  padding-top: 20px;
+}
+
+.primaryNavModalModelsResultProxy {
+  margin-top: 80px;
+  padding: 0 24px;
+  background-color: var(--ld-color-legacy-deepblue-light);
+
+  @include breakpoint($breakpoint-lg-min) {
+    background-color: var(--ld-color-legacy-deepblue-dark);
+  }
+}
+
+.quickBookCloseButton {
+  padding: 8px;
+  background: rgba(35, 38, 50, 0.1);
+}

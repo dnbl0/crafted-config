@@ -1,0 +1,8 @@
+.primaryNavItemsTestContainer {
+  // styles from parent container in nav
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-105
+  /* stylelint-disable csstools/value-no-unknown-custom-properties */
+  padding-block: var(--primary-nav-desktop-layout-padding-top);
+  padding-left: var(--primary-nav-modal-container-padding);
+  /* stylelint-enable csstools/value-no-unknown-custom-properties */
+}

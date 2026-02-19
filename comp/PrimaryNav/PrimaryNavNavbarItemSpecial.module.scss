@@ -1,0 +1,68 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+@use "./primary-nav-css-custom-props";
+@use "@tmca/lexus-dls/css/component/box.module";
+@use "../../styles/modules/breakpoints/mixins" as *;
+@use "../../styles/modules/breakpoints/variables" as *;
+@use "../../styles/modules/css-resets/mixins" as *;
+@use "./primary-nav-mixins" as *;
+
+.navbarItemSpecialContainer {
+  @include reset-button();
+  position: relative;
+  display: flex;
+  max-width: var(--primary-nav-navbar-item-special-max-width);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  // Left border, except the last px is omitted to avoid having a 0.75 opacity
+  // pixel where it overlaps the navbar border
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 1px;
+    // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+    opacity: 0.5;
+    border-left: var(--primary-nav-navbar-item-special-border-left);
+  }
+
+  cursor: pointer;
+  transition: var(--primary-nav-navbar-item-special-background-transition);
+
+  &:hover {
+    // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+    background: var(--primary-nav-navbar-item-special-background-hover);
+  }
+
+  @include breakpoint($breakpoint-lg-min) {
+    &.isActive {
+      // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+      background: var(--primary-nav-navbar-item-special-background-active);
+      color: var(--ld-color-legacy-deepblue-darkest);
+
+      .icon,
+      .label {
+        color: var(--ld-color-legacy-deepblue-darkest);
+      }
+    }
+  }
+}
+
+.navbarItemSpecial {
+  height: 100%;
+}
+
+.icon {
+  display: flex;
+}
+
+.icon + .label {
+  margin-top: 4px;
+}
+
+.label {
+  @include primary-nav-tg-navbar-item-special-label;
+}

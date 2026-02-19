@@ -1,0 +1,68 @@
+.closeButtonBackground {
+  --primary-nav-close-button-background-height: 78px;
+
+  position: absolute;
+  z-index: 1; // new stacking context
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--primary-nav-close-button-background-height);
+  pointer-events: none;
+}
+
+.closeButtonBackgroundGradient,
+.closeButtonBackgroundBlur1,
+.closeButtonBackgroundBlur2,
+.closeButtonBackgroundBlur3 {
+  // TODO: remove variables when tokens are ready https://toyotaau.atlassian.net/browse/LK-106
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.closeButtonBackgroundGradient {
+  z-index: 1;
+  height: var(--primary-nav-close-button-background-height);
+
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+  background: var(--ld-color-legacy-deepblue-dark);
+  mask-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 86.48%,
+    rgba(0, 0, 0, 0.951567) 87.54%,
+    rgba(0, 0, 0, 0.90455) 88.51%,
+    rgba(0, 0, 0, 0.858022) 89.42%,
+    rgba(0, 0, 0, 0.811054) 90.28%,
+    rgba(0, 0, 0, 0.762719) 91.09%,
+    rgba(0, 0, 0, 0.712088) 91.88%,
+    rgba(0, 0, 0, 0.658234) 92.66%,
+    rgba(0, 0, 0, 0.600228) 93.43%,
+    rgba(0, 0, 0, 0.537143) 94.23%,
+    rgba(0, 0, 0, 0.46805) 95.04%,
+    rgba(0, 0, 0, 0.392023) 95.9%,
+    rgba(0, 0, 0, 0.308132) 96.81%,
+    rgba(0, 0, 0, 0.21545) 97.79%,
+    rgba(0, 0, 0, 0.113048) 98.85%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.closeButtonBackgroundBlur1 {
+  top: calc(100% - 13px);
+  height: 8px;
+  backdrop-filter: blur(0.66px);
+}
+
+.closeButtonBackgroundBlur2 {
+  top: calc(100% - 13px);
+  height: 12px;
+  backdrop-filter: blur(0.66px);
+}
+
+.closeButtonBackgroundBlur3 {
+  top: calc(100% - 13px);
+  height: 16px;
+  backdrop-filter: blur(0.66px);
+}

@@ -1,0 +1,63 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+@use "@tmca/lexus-dls/css/component/menu.module";
+
+.primaryNavMobilePage {
+  padding-top: var(--primary-nav-mobile-page-padding-top);
+
+  min-height: 100vh; // required instead of flex-grow: 1 to prevent jumpiness during modal switch transitions
+
+  display: flex;
+  flex-direction: column;
+}
+
+.closeButtonContainer {
+  @extend #{".ldMenu"};
+
+  // TODO: remove variables when tokens are ready https://toyotaau.atlassian.net/browse/LK-106
+  --primary-nav-mobile-page-close-button-offset-left: 24px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-left: var(--primary-nav-mobile-page-close-button-offset-left);
+  z-index: var(--lk-menu-close-button-container-z-index);
+}
+
+.header {
+  padding-bottom: var(--primary-nav-mobile-page-level-2-header-padding-bottom);
+}
+
+.childrenAndFooter {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.children {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  &NoFlexGrow {
+    flex-grow: 0;
+  }
+}
+
+.children + .footer {
+  margin-top: var(--primary-nav-mobile-page-level-2-children-footer-spacing);
+}
+
+.primaryNavMobilePage.level2 {
+  padding-bottom: 0;
+
+  .childrenAndFooter {
+    // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+    background: var(--ld-color-legacy-deepblue-light);
+    padding-top: var(--primary-nav-mobile-page-level-2-footer-and-children-padding-top);
+  }
+}
+
+.quickBookButton {
+  flex-grow: 1;
+}

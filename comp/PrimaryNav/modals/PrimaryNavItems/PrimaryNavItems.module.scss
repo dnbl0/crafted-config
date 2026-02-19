@@ -1,0 +1,58 @@
+@use "../../../../styles/modules/breakpoints/mixins" as *;
+@use "../../../../styles/modules/breakpoints/variables" as *;
+@use "../../../../styles/modules/ornaments/senkei/mixins" as *;
+@use "../../../../styles/modules/css-resets/mixins" as *;
+@use "../../primary-nav-mixins" as *;
+
+.primaryNavItems {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-105
+  color: var(--ld-color-legacy-lexus-brand-white);
+}
+
+.primaryNavItem {
+  @include reset-button();
+  color: var(--ld-color-legacy-lexus-brand-white);
+  text-decoration: none;
+  width: fit-content;
+  @include primary-nav-tg-item;
+  @include ornaments-senkei-base("after");
+  cursor: pointer;
+
+  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+
+  &:hover {
+    color: var(--ld-color-legacy-lexus-brand-white);
+  }
+}
+
+.isNavItemSelected .primaryNavItem:not(.primaryNavItemSelected) {
+  opacity: 0.7;
+}
+
+.primaryNavItem + .primaryNavItem {
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  margin-top: var(--primary-nav-items-spacing-between);
+}
+
+.primaryNavItem:hover,
+.primaryNavItemHovered {
+  color: var(--ld-color-legacy-lexus-brand-white);
+
+  @include breakpoint($breakpoint-lg-min) {
+    @include ornaments-senkei-apply-expanded("after");
+  }
+}
+
+.primaryNavItemSelected {
+  @include ornaments-senkei-apply-expanded("after");
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

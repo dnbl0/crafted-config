@@ -1,0 +1,68 @@
+@use "../../../styles/modules/breakpoints/mixins" as *;
+@use "../../../styles/modules/breakpoints/variables" as *;
+@use "../primary-nav-mixins" as *;
+
+.primaryNavStaticContactUs {
+  // TODO: remove variables when tokens are ready https://toyotaau.atlassian.net/browse/LK-105
+  --primary-nav-static-link-item-gap: 24px 40px;
+
+  position: relative;
+  @include primary-nav-tg-item;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    opacity: 0.5;
+    border-top: 1px solid var(--ld-color-legacy-lexus-brand-white);
+  }
+  padding: 0;
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  margin-top: var(--primary-nav-footer-padding);
+
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-105
+  color: var(--ld-color-legacy-lexus-brand-white);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.dealerNavContainer {
+  background: var(--ld-color-legacy-deepblue-light);
+}
+
+.dealerNavTitleIconContainer {
+  display: flex;
+}
+
+.dealerNavTitleIcon {
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-105
+  fill: var(--ld-color-legacy-smoke-default);
+  display: block;
+  align-self: center;
+}
+
+.dealerNavDetails {
+  transition: max-height 300ms ease-out;
+  max-height: 0;
+  max-width: 100%;
+  overflow: hidden;
+
+  &Visible {
+    /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+    max-height: var(--primary-nav-modal-dealer-details-visible-max-height);
+  }
+}
+
+.dealerNavTitleContainer {
+  justify-content: space-between;
+  display: flex;
+
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  padding: var(--primary-nav-footer-padding);
+  cursor: pointer;
+}

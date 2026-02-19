@@ -1,0 +1,58 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+.primaryNavContainer {
+  --primary-nav-container-shadow-height: calc(100% + 56px);
+
+  position: absolute; // activate z-index, overlap page content
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(
+    --lk-primary-nav-z-index
+  ); // 1) new stacking context for .navbarShadow 2) appear on top of page content
+
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+  color: var(--ld-color-legacy-lexus-brand-white);
+
+  &.isSolidBackground {
+    // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+    background-color: var(--ld-color-legacy-deepblue-darkest);
+  }
+
+  &.isFixedAtTop {
+    position: fixed;
+    left: 0;
+    right: 0;
+  }
+
+  &.isSolidContainer {
+    position: relative;
+  }
+
+  &.isFixedAtTop.isSolidContainer {
+    position: sticky;
+  }
+}
+
+.navbarShadow {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--primary-nav-container-shadow-height);
+  pointer-events: none;
+  // TODO: review tokens https://toyotaau.atlassian.net/browse/LK-106
+  background: var(--ld-color-legacy-lexus-brand-black);
+  mask-image: linear-gradient(
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.541) 34%,
+    rgba(0, 0, 0, 0.382) 47%,
+    rgba(0, 0, 0, 0.278) 56.5%,
+    rgba(0, 0, 0, 0.126) 73%,
+    rgba(0, 0, 0, 0.075) 80.2%,
+    rgba(0, 0, 0, 0.021) 91%,
+    rgba(0, 0, 0, 0.002) 98.2%,
+    rgba(0, 0, 0, 0)
+  );
+}

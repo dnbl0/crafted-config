@@ -1,0 +1,20 @@
+@use "../primary-nav-mixins" as *;
+@use "../../../styles/modules/css-resets/mixins" as *;
+
+.primaryNavMobileMenuItems {
+  @include reset-list();
+  display: flex;
+  flex-direction: column;
+}
+
+.primaryNavMobileMenuItem {
+  @include reset-list-item();
+  @include primary-nav-tg-item;
+  color: var(--ld-color-legacy-lexus-brand-white);
+  cursor: pointer;
+}
+
+.primaryNavMobileMenuItem + .primaryNavMobileMenuItem {
+  /* stylelint-disable-next-line csstools/value-no-unknown-custom-properties */
+  margin-top: var(--primary-nav-items-spacing-between);
+}

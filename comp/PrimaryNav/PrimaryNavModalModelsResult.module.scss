@@ -1,0 +1,142 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+@use "../../styles/modules/breakpoints/mixins" as *;
+@use "../../styles/modules/breakpoints/variables" as *;
+@use "@tmca/lexus-dls/css/component/container.module";
+@use "@tmca/lexus-dls/css/component/menu.module";
+@use "../../styles/modules/css-resets/mixins" as *;
+
+// Cannot use custom css vars in breakpoints
+$filter-button-breakpoint: 576px; // 6 cols
+
+.container {
+  @extend #{".ldMenu"};
+  --lk-private-legacy-filter-menu-transition-duration: 200ms;
+  --lk-tabs-gradient-fade: var(--ld-color-legacy-deepblue-light);
+
+  container-type: inline-size;
+}
+
+.main {
+  width: 100%;
+}
+
+.carContainers {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(var(--ld-c-menu-card-min-w), 100%), 1fr));
+  grid-gap: var(--ld-c-stack-gap-static-m);
+}
+
+.carContainer {
+  max-width: var(--ld-c-menu-card-max-w);
+}
+
+.filterDesktop {
+  display: none;
+
+  @include container-breakpoint($filter-button-breakpoint) {
+    display: block;
+  }
+}
+
+.filterContainerMobile {
+  @include container-breakpoint($filter-button-breakpoint) {
+    display: none;
+  }
+}
+
+.button {
+  width: 100%;
+}
+
+.linkReset {
+  @include reset-button();
+}
+
+// :not:empty to increase specificity so not overridden by lexus-style-guide
+.bodyTypeHeading:not(:empty) {
+  margin-bottom: 0;
+}
+
+// :not:empty to increase specificity so not overridden by lexus-style-guide
+.bodyTypeCta:not(:empty) {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.filterModal {
+  --filter-modal-display: flex;
+  --filter-padding-top: 104px;
+  --filter-padding: 24px;
+
+  display: none;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+  position: fixed;
+  margin: unset;
+  padding: var(--filter-padding-top) var(--filter-padding) var(--filter-padding);
+  inset: 0;
+}
+
+.filterModalEnter {
+  opacity: 0;
+  visibility: visible;
+  transform: translateX(100%);
+  display: var(--filter-modal-display);
+}
+
+.filterModalEnterActive {
+  opacity: 1;
+  transition: all var(--lk-private-legacy-filter-menu-transition-duration) ease-in-out;
+  visibility: visible;
+  transform: translateX(0);
+  display: var(--filter-modal-display);
+}
+
+.filterModalEnterDone {
+  opacity: 1;
+  display: var(--filter-modal-display);
+}
+
+.filterModalExit {
+  opacity: 1;
+  display: var(--filter-modal-display);
+}
+
+.filterModalExitActive {
+  display: var(--filter-modal-display);
+  opacity: 0;
+  transition: all var(--lk-private-legacy-filter-menu-transition-duration);
+}
+
+.filterModalExitDone {
+  display: none;
+}
+
+.vehicleEnter {
+  opacity: 0.6;
+  display: block;
+}
+
+.vehicleEnterActive {
+  opacity: 1;
+  transition: opacity calc(var(--ld-c-menu-filter-transition-duration) * 1ms) ease-out;
+}
+
+.vehicleEnterDone {
+  opacity: 1;
+}
+
+.vehicleExit {
+  opacity: 1;
+}
+
+.vehicleExitActive {
+  opacity: 0.6;
+  transition: opacity calc(var(--ld-c-menu-filter-transition-duration) * 1ms) ease-out;
+}
+
+.vehicleExitDone {
+  opacity: 0;
+}

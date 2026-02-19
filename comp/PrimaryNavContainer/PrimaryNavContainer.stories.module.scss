@@ -1,0 +1,43 @@
+.demoPrimaryNavContainerChild {
+  padding: 48px;
+  color: var(--ld-color-legacy-lexus-brand-white);
+}
+
+.textLine {
+  background-color: var(--ld-color-legacy-deepblue-darkest);
+  padding: 8px;
+}
+
+.codeButton {
+  cursor: pointer;
+  box-shadow: 0 0 0 0.5px currentColor inset;
+  padding: 2px 4px;
+  background: rgba(#000000, 0.25);
+  outline: 1px solid rgba(#000000, 0.5);
+}
+
+.mockSiteBanner {
+  overflow: hidden;
+  max-height: 50px;
+  transition: max-height 1s ease-out;
+
+  &.isClosed {
+    max-height: 0;
+  }
+}
+
+.mockSiteBannerContent {
+  padding: 8px 20px;
+  text-align: center;
+  background: var(--ld-color-legacy-deepblue-default);
+  color: var(--ld-color-legacy-lexus-brand-white);
+}
+
+.mockSiteBannerClose {
+  float: right;
+  cursor: pointer;
+  box-shadow: 0 0 0 0.5px currentColor inset;
+  padding: 2px 4px;
+  background: rgba(#000000, 0.25);
+  outline: 1px solid rgba(#000000, 0.5);
+}
