@@ -1,0 +1,28 @@
+@use "@tmca/lexus-dls/css/component/cell.module";
+
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+.cell {
+  @extend #{".ldCell"};
+  --lk-private-cells-in-section: 1;
+
+  display: flex;
+  flex-grow: inherit;
+  max-height: 100%;
+  overflow: hidden;
+
+  &.alignToEdge:not(:empty) {
+    --lk-private-alignment: var(--lk-private-default-gap);
+  }
+
+  &.alignToCenter:not(:empty) {
+    --lk-private-alignment: calc(var(--lk-private-default-gap) / 2);
+  }
+
+  &.double {
+    --lk-private-cells-in-section: 2;
+  }
+
+  &.triple {
+    --lk-private-cells-in-section: 3;
+  }
+}

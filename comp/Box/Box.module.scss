@@ -1,0 +1,5 @@
+@use "@tmca/lexus-dls/css/component/box.module";
+
+.box {
+  @extend #{".ldBox"};
+}

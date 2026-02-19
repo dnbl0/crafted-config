@@ -1,0 +1,58 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+@use "@tmca/lexus-dls/css/component/container.module";
+
+.container {
+  @extend #{".ldContainer"};
+}
+
+.noMaxFullWidth {
+  --lk-private-max-full: 100vw; // Set it to screen size to match existing max limit and remove 100% max-width
+}
+
+.flexContainer {
+  display: flex;
+}
+
+.widthnone {
+  max-width: min(100%, 100vw);
+}
+
+.width3col {
+  max-width: min(var(--ld-c-container-width-3col-max-w), var(--lk-private-max-full, 100%), 100vw);
+}
+
+.width4col {
+  max-width: min(var(--ld-c-container-width-4col-max-w), var(--lk-private-max-full, 100%), 100vw);
+}
+
+.width6col {
+  max-width: min(var(--ld-c-container-width-6col-max-w), var(--lk-private-max-full, 100%), 100vw);
+}
+
+.width8col {
+  max-width: min(var(--ld-c-container-width-8col-max-w), var(--lk-private-max-full, 100%), 100vw);
+}
+
+.width10col {
+  max-width: min(var(--ld-c-container-width-10col-max-w), var(--lk-private-max-full, 100%), 100vw);
+}
+
+.width12col {
+  max-width: min(var(--ld-c-container-width-12col-max-w), var(--lk-private-max-full, 100%), 100vw);
+}
+
+.minWidth4col {
+  min-width: var(--ld-c-container-width-4col-min-w);
+}
+
+.minWidth6col {
+  min-width: var(--ld-c-container-width-6col-min-w);
+}
+
+.minWidth8col {
+  min-width: var(--ld-c-container-width-8col-min-w);
+}
+
+.minWidth12col {
+  min-width: var(--ld-c-container-width-12col-min-w);
+}

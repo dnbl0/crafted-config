@@ -1,0 +1,51 @@
+/* stylelint-disable csstools/value-no-unknown-custom-properties */
+@use "@tmca/lexus-dls/css/component/gridLayout.module";
+@use "../../styles/modules/breakpoints/mixins" as *;
+@use "../../styles/modules/breakpoints/variables" as *;
+
+.gridContainer {
+  container-type: inline-size;
+}
+
+.grid {
+  @extend #{".ldGridLayout"};
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ld-c-grid-layout-gap);
+}
+
+.gridItem {
+  flex-grow: 1;
+  min-width: min(calc(var(--ld-c-grid-layout-min-w) - var(--ld-c-grid-layout-gap) / 2), 100%);
+
+  @include breakpoint($breakpoint-lg-min) {
+    max-width: calc(50% - var(--ld-c-grid-layout-gap) / 2);
+  }
+}
+
+.gridThreeColumns .gridItem {
+  @include breakpoint($breakpoint-lg-min) {
+    min-width: calc(25cqw - var(--ld-c-grid-layout-gap) / var(--lk-private-grid-cols));
+    max-width: calc(
+      (100cqw - var(--ld-c-grid-layout-gap) * (var(--lk-private-grid-cols) - 1)) /
+        var(--lk-private-grid-cols)
+    );
+  }
+}
+
+.gridItemCenter {
+  margin: 0 auto;
+}
+
+.gridStatus {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

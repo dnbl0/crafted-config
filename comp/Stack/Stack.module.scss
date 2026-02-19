@@ -1,0 +1,5 @@
+@use "@tmca/lexus-dls/css/component/stack.module";
+
+.stack {
+  @extend #{".ldStack"};
+}
