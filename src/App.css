@@ -1,0 +1,30 @@
+/* LK Design System — Base Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input::placeholder {
+  opacity: 0.5;
+}
+
+button {
+  cursor: pointer;
+}
+
+#root {
+  min-height: 100vh;
+}
