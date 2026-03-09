@@ -3,7 +3,7 @@ import type { SVGScrollIndicatorAnimatedProps } from './SVGScrollIndicatorAnimat
 export function SVGScrollIndicatorAnimated({ className, style, children, ...rest }: SVGScrollIndicatorAnimatedProps) {
     return (
         <div className={className} style={style} {...rest}>
-            {children || 'SVGScrollIndicatorAnimated'}
+            {children}
         </div>
     );
 }

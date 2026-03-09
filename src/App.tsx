@@ -295,6 +295,54 @@ function PageContent({ name }: { name: string }) {
 
   if (!ComponentToRender) return <div style={{ padding: 40}}>Component not found.</div>;
 
+  // Helper to render components with demo props
+  const renderComponentDemo = () => {
+    const demoProps: Record<string, any> = {
+      Button: { children: 'Click Me', variant: 'primary' },
+      Alert: { children: 'This is an alert message' },
+      Chip: { children: 'Chip Label' },
+      Label: { children: 'Label Text' },
+      IconButton: { children: '☰' },
+      TextField: { label: 'Input Label', placeholder: 'Enter text...' },
+      TextInput: { placeholder: 'Type something...' },
+      Select: { children: <option>Select an option</option> },
+      Checkbox: { label: 'Checkbox Label' },
+      Radio: { label: 'Radio Option' },
+      ProgressBar: { value: 60, max: 100 },
+      ProgressStepper: { currentStep: 2, totalSteps: 4 },
+      LoadingSpinner: {},
+      Divider: {},
+      Accordion: { children: 'Accordion content here' },
+      List: { children: <ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul> },
+      Card: { children: 'Card content' },
+      Modal: { children: 'Modal content', isOpen: false },
+      Tooltip: { content: 'Tooltip text', children: 'Hover me' },
+      Stack: { children: <><div>Item 1</div><div>Item 2</div><div>Item 3</div></> },
+      Grid: { children: <><div>Grid 1</div><div>Grid 2</div><div>Grid 3</div></> },
+      Box: { children: 'Box content' },
+      Container: { children: 'Container content' },
+      Surface: { children: 'Surface content' },
+    };
+
+    const props = demoProps[name] || {};
+    const hasChildren = 'children' in props;
+    
+    if (!hasChildren && ComponentToRender.length === 0) {
+      // Component doesn't take children (like LoadingSpinner, Divider)
+      return <ComponentToRender {...props} />;
+    }
+    
+    return (
+      <ComponentToRender {...props}>
+        {!hasChildren && (
+          <div style={{ padding: 24, border: `2px dashed ${tokens.accentPrimaryDefault}`, borderRadius: 8, backgroundColor: tokens.canvasLighter, color: tokens.foregroundDefault, textAlign: 'center', opacity: 0.8, fontWeight: 500 }}>
+            Sample Data for {name.replace(/([A-Z])/g, ' $1').trim()}
+          </div>
+        )}
+      </ComponentToRender>
+    );
+  };
+
   return (
     <main style={{ flex: 1, padding: '48px 64px', overflowY: 'auto', height: 'calc(100vh - 64px)', backgroundColor: tokens.canvasDefault }}>
       <div style={{ maxWidth: 960, margin: '0 0' }}>
@@ -349,11 +397,7 @@ function PageContent({ name }: { name: string }) {
               boxShadow: tokens.shadowsLess
             }}>
               <div style={{ padding: '64px', backgroundColor: tokens.elevationRaisedDefault, display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 300, backgroundImage: 'radial-gradient(circle, #8882 1px, transparent 1px)', backgroundSize: '16px 16px' }}>
-                <ComponentToRender>
-                  <div style={{ padding: 24, border: `2px dashed ${tokens.accentPrimaryDefault}`, borderRadius: 8, backgroundColor: tokens.canvasLighter, color: tokens.foregroundDefault, textAlign: 'center', opacity: 0.8, fontWeight: 500 }}>
-                    Sample Data for {name.replace(/([A-Z])/g, ' $1').trim()}
-                  </div>
-                </ComponentToRender>
+                {renderComponentDemo()}
               </div>
               <div style={{ borderTop: `1px solid ${tokens.modifiersMidlight}`, padding: '16px 24px', backgroundColor: tokens.elevationInsetDefault, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontSize: 14, color: tokens.foregroundDefault, opacity: 0.8 }}>Default Variant</span>

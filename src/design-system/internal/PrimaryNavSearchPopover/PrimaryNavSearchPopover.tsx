@@ -3,7 +3,7 @@ import type { PrimaryNavSearchPopoverProps } from './PrimaryNavSearchPopover.typ
 export function PrimaryNavSearchPopover({ className, style, children, ...rest }: PrimaryNavSearchPopoverProps) {
     return (
         <div className={className} style={style} {...rest}>
-            {children || 'PrimaryNavSearchPopover'}
+            {children}
         </div>
     );
 }

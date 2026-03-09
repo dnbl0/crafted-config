@@ -3,7 +3,7 @@ import type { PrimaryNavNavbarItemAuthenticatedProps } from './PrimaryNavNavbarI
 export function PrimaryNavNavbarItemAuthenticated({ className, style, children, ...rest }: PrimaryNavNavbarItemAuthenticatedProps) {
     return (
         <div className={className} style={style} {...rest}>
-            {children || 'PrimaryNavNavbarItemAuthenticated'}
+            {children}
         </div>
     );
 }

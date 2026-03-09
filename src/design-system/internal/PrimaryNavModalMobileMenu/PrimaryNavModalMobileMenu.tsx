@@ -3,7 +3,7 @@ import type { PrimaryNavModalMobileMenuProps } from './PrimaryNavModalMobileMenu
 export function PrimaryNavModalMobileMenu({ className, style, children, ...rest }: PrimaryNavModalMobileMenuProps) {
     return (
         <div className={className} style={style} {...rest}>
-            {children || 'PrimaryNavModalMobileMenu'}
+            {children}
         </div>
     );
 }

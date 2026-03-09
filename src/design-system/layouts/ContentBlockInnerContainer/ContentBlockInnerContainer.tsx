@@ -3,7 +3,7 @@ import type { ContentBlockInnerContainerProps } from './ContentBlockInnerContain
 export function ContentBlockInnerContainer({ className, style, children, ...rest }: ContentBlockInnerContainerProps) {
     return (
         <div className={className} style={style} {...rest}>
-            {children || 'ContentBlockInnerContainer'}
+            {children}
         </div>
     );
 }

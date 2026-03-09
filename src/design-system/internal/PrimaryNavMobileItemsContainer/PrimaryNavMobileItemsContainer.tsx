@@ -3,7 +3,7 @@ import type { PrimaryNavMobileItemsContainerProps } from './PrimaryNavMobileItem
 export function PrimaryNavMobileItemsContainer({ className, style, children, ...rest }: PrimaryNavMobileItemsContainerProps) {
     return (
         <div className={className} style={style} {...rest}>
-            {children || 'PrimaryNavMobileItemsContainer'}
+            {children}
         </div>
     );
 }

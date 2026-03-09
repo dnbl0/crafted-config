@@ -3,7 +3,7 @@ import type { PrimaryNavModalContainerProps } from './PrimaryNavModalContainer.t
 export function PrimaryNavModalContainer({ className, style, children, ...rest }: PrimaryNavModalContainerProps) {
     return (
         <div className={className} style={style} {...rest}>
-            {children || 'PrimaryNavModalContainer'}
+            {children}
         </div>
     );
 }

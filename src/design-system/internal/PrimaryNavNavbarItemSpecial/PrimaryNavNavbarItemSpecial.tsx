@@ -3,7 +3,7 @@ import type { PrimaryNavNavbarItemSpecialProps } from './PrimaryNavNavbarItemSpe
 export function PrimaryNavNavbarItemSpecial({ className, style, children, ...rest }: PrimaryNavNavbarItemSpecialProps) {
     return (
         <div className={className} style={style} {...rest}>
-            {children || 'PrimaryNavNavbarItemSpecial'}
+            {children}
         </div>
     );
 }

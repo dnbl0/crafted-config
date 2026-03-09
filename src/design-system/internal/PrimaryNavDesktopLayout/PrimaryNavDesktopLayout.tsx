@@ -3,7 +3,7 @@ import type { PrimaryNavDesktopLayoutProps } from './PrimaryNavDesktopLayout.typ
 export function PrimaryNavDesktopLayout({ className, style, children, ...rest }: PrimaryNavDesktopLayoutProps) {
     return (
         <div className={className} style={style} {...rest}>
-            {children || 'PrimaryNavDesktopLayout'}
+            {children}
         </div>
     );
 }

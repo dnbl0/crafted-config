@@ -3,7 +3,7 @@ import type { PrimaryNavCloseButtonBackgroundProps } from './PrimaryNavCloseButt
 export function PrimaryNavCloseButtonBackground({ className, style, children, ...rest }: PrimaryNavCloseButtonBackgroundProps) {
     return (
         <div className={className} style={style} {...rest}>
-            {children || 'PrimaryNavCloseButtonBackground'}
+            {children}
         </div>
     );
 }

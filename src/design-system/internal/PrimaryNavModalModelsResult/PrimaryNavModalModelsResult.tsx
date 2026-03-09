@@ -3,7 +3,7 @@ import type { PrimaryNavModalModelsResultProps } from './PrimaryNavModalModelsRe
 export function PrimaryNavModalModelsResult({ className, style, children, ...rest }: PrimaryNavModalModelsResultProps) {
     return (
         <div className={className} style={style} {...rest}>
-            {children || 'PrimaryNavModalModelsResult'}
+            {children}
         </div>
     );
 }
