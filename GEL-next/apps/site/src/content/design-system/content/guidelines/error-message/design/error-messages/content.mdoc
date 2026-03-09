@@ -1,0 +1,46 @@
+Errors are frustrating and interrupt the customer experience, so create messages that can help the customer.
+
+When creating error messages, don’t blame the customer and avoid alarming them by saying that something has gone wrong. Instead, explain what happened and help the customer get back on track.
+
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">For example:</h4>
+<p className="typography-body-10 mb-2 ml-4"><span className="text-success font-bold">Do:</span> Enter an email address in the format: name@example.com</p>
+<p className="typography-body-10 ml-4"><span className="text-danger font-bold">Don't:</span> You’ve entered an invalid email</p>
+</div>
+```
+
+---
+
+Keep the message jargon-free and avoid technical terms like, ‘validation in progress’ or ‘invalid entry’.
+
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">For example:</h4>
+<p className="typography-body-10 mb-2 ml-4"><span className="text-success font-bold">Do:</span> We couldn’t sign you in. Check your internet connection and try again.</p>
+<p className="typography-body-10 ml-4"><span className="text-danger font-bold">Don't:</span> Network error</p>
+</div>
+```
+
+---
+
+Don’t use ‘Uh oh’ or ‘Oops’ as they don’t provide any useful information, and please don’t use please. Rather than being apologetic for every error state, focus on helping customers recover quickly by being direct and specific.
+
+It’s ok to use ‘please’ for the error summary heading, but it doesn’t need to be repeated elsewhere.
+
+---
+
+Give helpful hints to customers before they attempt to fill in a field.
+
+```jsx
+<div>
+  <h4 className="typography-body-10 text-muted mb-3">For example:</h4>
+<p className="typography-body-10">Your password should:</p>
+  <List className="list-disc">
+    <ListItem className="typography-body-10">be 8 characters or longer</ListItem>
+    <ListItem className="typography-body-10">contain at least 1 number or symbol e.g. !@#%</ListItem>
+  </List>
+</div>
+```
+
+Error messages should be displayed where the error is located instead of making the customer scroll through the page (especially on a mobile device) to find the corresponding field.

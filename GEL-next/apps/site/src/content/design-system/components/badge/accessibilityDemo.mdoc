@@ -1,0 +1,80 @@
+```tsx
+() => {
+    const COLORS = ['danger', 'faint', 'hero', 'info', 'neutral', 'primary', 'success', 'warning'] as const;
+    const INVERTED_COLORS = [
+      'danger-inverted',
+      'faint-inverted',
+      'hero-inverted',
+      'info-inverted',
+      'neutral-inverted',
+      'primary-inverted',
+      'success-inverted',
+      'warning-inverted',
+    ] as const;
+  
+    return (
+      <div className="flex flex-col gap-6">
+        <div>
+          <p className="mb-2 typography-body-10 text-muted">
+            <em>Examples showing pill style badge</em>
+          </p>
+          <div className="flex gap-2 items-center">
+            <Button look="primary" soft>
+              <div className="flex gap-1">
+                <Badge color="hero" type="pill">
+                  6
+                </Badge>
+                <span>Label</span>
+              </div>
+            </Button>
+
+            <Button look="primary">
+              <div className="flex gap-1">
+                <Badge color="faint" type="pill" soft>
+                  88
+                </Badge>
+                <span>Label</span>
+              </div>
+            </Button>
+            <div>
+              <Link type="inline" href="#">
+                Product feature
+              </Link>
+              <Badge color="muted" type="pill" className="ml-1">
+                  12
+              </Badge>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p className="mb-2 typography-body-10 text-muted">
+            <em>Examples showing basic style badge</em>
+          </p>
+          <div className="flex gap-2 items-center">
+            <Button look="primary" soft>
+              <div className="flex gap-1 items-center">
+                <span>Label</span>
+                <Badge color="hero">NEW</Badge>
+              </div>
+            </Button>
+  
+            <Button look="primary">
+              <div className="flex gap-1 items-center">
+                <span>Label</span>
+                <Badge color="faint" soft>NEW</Badge>
+              </div>
+            </Button>
+            <div>
+              <Link type="inline" href="#">
+                Product feature
+              </Link>
+              <Badge color="muted" className="ml-1">
+                  NEW
+              </Badge>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+```

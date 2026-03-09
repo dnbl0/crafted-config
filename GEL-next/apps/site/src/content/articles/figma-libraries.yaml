@@ -1,0 +1,19 @@
+name: Figma Libraries
+cardTitle: Figma Libraries
+description: >-
+  The Figma Libraries are a complete set of multi-brand, accessible design
+  assets to help you create high quality, consistent, experiences across all our
+  digital touchpoints.
+thumbnail:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/figma-libraries-hero.png
+  alt: Illustration of a painters pallet.
+  height: 1212
+  width: 3168
+smallDescription: >-
+  Design using cloud based symbols. All the assets you need to create interfaces
+  with the design system.
+image:
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/figma-libraries-hero.png\r"
+  alt: Illustration of a painters pallet.
+author: Kate Macdonald

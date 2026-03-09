@@ -1,0 +1,320 @@
+{
+  "name": "@westpac/ui",
+  "version": "0.59.3",
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/*/index.d.ts"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "default": "./dist/index.js"
+    },
+    "./component-type.json": {
+      "default": "./dist/component-type.json"
+    },
+    "./css": {
+      "default": "./dist/css/westpac-ui.min.css"
+    },
+    "./hook": {
+      "default": "./dist/hook/index.js"
+    },
+    "./tailwind": {
+      "default": "./dist/tailwind/index.js"
+    },
+    "./themes": {
+      "default": "./dist/tailwind/themes/index.js"
+    },
+    "./themes-constants": {
+      "default": "./dist/tailwind/constants/index.js"
+    },
+    "./accordion": {
+      "default": "./dist/components/accordion/index.js"
+    },
+    "./alert": {
+      "default": "./dist/components/alert/index.js"
+    },
+    "./autocomplete": {
+      "default": "./dist/components/autocomplete/index.js"
+    },
+    "./badge": {
+      "default": "./dist/components/badge/index.js"
+    },
+    "./bottom-sheet": {
+      "default": "./dist/components/bottom-sheet/index.js"
+    },
+    "./breadcrumb": {
+      "default": "./dist/components/breadcrumb/index.js"
+    },
+    "./button": {
+      "default": "./dist/components/button/index.js"
+    },
+    "./button-dropdown": {
+      "default": "./dist/components/button-dropdown/index.js"
+    },
+    "./button-group": {
+      "default": "./dist/components/button-group/index.js"
+    },
+    "./checkbox-group": {
+      "default": "./dist/components/checkbox-group/index.js"
+    },
+    "./circle": {
+      "default": "./dist/components/circle/index.js"
+    },
+    "./collapsible": {
+      "default": "./dist/components/collapsible/index.js"
+    },
+    "./compacta": {
+      "default": "./dist/components/compacta/index.js"
+    },
+    "./date-picker": {
+      "default": "./dist/components/date-picker/index.js"
+    },
+    "./date-picker-beta": {
+      "default": "./dist/components/date-picker-beta/index.js"
+    },
+    "./error-message": {
+      "default": "./dist/components/error-message/index.js"
+    },
+    "./field": {
+      "default": "./dist/components/field/index.js"
+    },
+    "./filter": {
+      "default": "./dist/components/filter/index.js"
+    },
+    "./flexi-cell": {
+      "default": "./dist/components/flexi-cell/index.js"
+    },
+    "./footer": {
+      "default": "./dist/components/footer/index.js"
+    },
+    "./form": {
+      "default": "./dist/components/form/index.js"
+    },
+    "./hint": {
+      "default": "./dist/components/hint/index.js"
+    },
+    "./label": {
+      "default": "./dist/components/label/index.js"
+    },
+    "./grid": {
+      "default": "./dist/components/grid/index.js"
+    },
+    "./header": {
+      "default": "./dist/components/header/index.js"
+    },
+    "./heading": {
+      "default": "./dist/components/heading/index.js"
+    },
+    "./icon": {
+      "default": "./dist/components/icon/index.js"
+    },
+    "./input": {
+      "default": "./dist/components/input/index.js"
+    },
+    "./input-group": {
+      "default": "./dist/components/input-group/index.js"
+    },
+    "./link": {
+      "default": "./dist/components/link/index.js"
+    },
+    "./list": {
+      "default": "./dist/components/list/index.js"
+    },
+    "./modal": {
+      "default": "./dist/components/modal/index.js"
+    },
+    "./multi-select": {
+      "default": "./dist/components/multi-select/index.js"
+    },
+    "./pagination": {
+      "default": "./dist/components/pagination/index.js"
+    },
+    "./panel": {
+      "default": "./dist/components/panel/index.js"
+    },
+    "./pass-code": {
+      "default": "./dist/components/pass-code/index.js"
+    },
+    "./pass-code-view": {
+      "default": "./dist/components/pass-code-view/index.js"
+    },
+    "./pictogram": {
+      "default": "./dist/components/pictogram/index.js"
+    },
+    "./popover": {
+      "default": "./dist/components/popover/index.js"
+    },
+    "./progress-bar": {
+      "default": "./dist/components/progress-bar/index.js"
+    },
+    "./progress-indicator": {
+      "default": "./dist/components/progress-indicator/index.js"
+    },
+    "./progress-rope": {
+      "default": "./dist/components/progress-rope/index.js"
+    },
+    "./radio-group": {
+      "default": "./dist/components/radio-group/index.js"
+    },
+    "./repeater": {
+      "default": "./dist/components/repeater/index.js"
+    },
+    "./select": {
+      "default": "./dist/components/select/index.js"
+    },
+    "./selector": {
+      "default": "./dist/components/selector/index.js"
+    },
+    "./skip-link": {
+      "default": "./dist/components/skip-link/index.js"
+    },
+    "./switch": {
+      "default": "./dist/components/switch/index.js"
+    },
+    "./symbol": {
+      "default": "./dist/components/symbol/index.js"
+    },
+    "./table": {
+      "default": "./dist/components/table/index.js"
+    },
+    "./tabs": {
+      "default": "./dist/components/tabs/index.js"
+    },
+    "./textarea": {
+      "default": "./dist/components/textarea/index.js"
+    },
+    "./visually-hidden": {
+      "default": "./dist/components/visually-hidden/index.js"
+    },
+    "./well": {
+      "default": "./dist/components/well/index.js"
+    }
+  },
+  "files": [
+    "*",
+    "!.storybook",
+    "!coverage",
+    "!scaffold",
+    "!stories",
+    "!vitest.setup.ts",
+    "!vitest.config.ts",
+    "!**/*.{test,spec,stories}.{ts,tsx,js,jsx}"
+  ],
+  "scripts": {
+    "dev": "pnpm build:watch",
+    "clean": "shx rm -rf dist",
+    "build:css:min": "shx mkdir -p dist/css && cross-env NPM_ENV=production postcss src/css/global.css  > dist/css/westpac-ui.min.css",
+    "build:css": "shx mkdir -p dist/css && cross-env NPM_ENV=development postcss src/css/global.css  > dist/css/westpac-ui.css",
+    "build:css:all": "pnpm build:css && pnpm build:css:min",
+    "build:types": "tsc --project tsconfig.build.json",
+    "build:esm": "swc ./src -d dist --no-swcrc --config-file .swcrc",
+    "build:icons": "node --loader ts-node/esm ./utils/build-icons/index.ts",
+    "build:exports": "ts-node --esm ./utils/build-exports/index.ts && prettier --write package.json",
+    "build:watch": "pnpm clean && pnpm build:types && pnpm build:esm -w && pnpm build:css:all",
+    "build:type-table": "node generate-component-types.cjs",
+    "build:svg-zip": "node --loader ts-node/esm ./utils/build-svg-zip/index.ts",
+    "build": "pnpm clean && pnpm build:types && pnpm build:esm && pnpm build:css:all && pnpm build:type-table",
+    "check-types": "tsc --noemit --emitDeclarationOnly false",
+    "lint": "eslint \"./src/**/*.{ts,tsx,js,jsx}\"",
+    "lint:fix": "eslint \"./src/**/*.{ts,tsx,js,jsx}\" --fix",
+    "test": "vitest run",
+    "test:watch": "vitest --no-coverage",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "generate:component": "plop && pnpm build:exports"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^4.1.3",
+    "@eslint/compat": "~1.3.2",
+    "@eslint/eslintrc": "~3.3.1",
+    "@eslint/js": "~9.30.0",
+    "@react-types/accordion": "3.0.0-alpha.14",
+    "@react-types/combobox": "~3.13.6",
+    "@react-types/shared": "~3.30.0",
+    "@react-types/tabs": "~3.3.16",
+    "@storybook/addon-a11y": "10.2.3",
+    "@storybook/addon-docs": "10.2.3",
+    "@storybook/addon-links": "10.2.3",
+    "@storybook/addon-mcp": "~0.2.2",
+    "@storybook/addon-themes": "~10.2.3",
+    "@storybook/react-vite": "10.2.11",
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.35",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^15.0.6",
+    "@testing-library/user-event": "~14.4.3",
+    "@types/adm-zip": "~0.5.7",
+    "@types/lodash-es": "~4.17.8",
+    "@types/lodash.throttle": "~4.1.7",
+    "@types/prettier": "~2.7.3",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.1",
+    "@types/testing-library__jest-dom": "^5.14.5",
+    "@vitejs/plugin-react-swc": "^3.7.0",
+    "@vitest/coverage-v8": "~3.2.4",
+    "@westpac/eslint-config": "workspace:~",
+    "@westpac/test-config": "workspace:~",
+    "@westpac/ts-config": "workspace:~",
+    "chokidar": "^3.5.3",
+    "cross-env": "~7.0.3",
+    "csstype": "~3.1.3",
+    "eslint": "^9.32.0",
+    "eslint-plugin-storybook": "~10.1.4",
+    "glob": "~10.5.0",
+    "jsdom": "^22.1.0",
+    "plop": "~4.0.5",
+    "postcss": "~8.4.31",
+    "postcss-cli": "~10.1.0",
+    "prettier": "^3.2.5",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-docgen-typescript": "~2.2.2",
+    "react-dom": "^18.2.0",
+    "shx": "^0.3.4",
+    "storybook": "10.2.11",
+    "tailwind-variants": "~0.2.1",
+    "tailwindcss": "~3.4.19",
+    "tailwindcss-themer": "~3.1.0",
+    "ts-node": "~10.9.1",
+    "typescript": "^5.5.4",
+    "vite": "^7.0.8",
+    "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "@duetds/date-picker": "~1.4.0",
+    "@internationalized/date": "~3.10.0",
+    "@react-aria/accordion": "3.0.0-alpha.37",
+    "@react-aria/utils": "~3.29.1",
+    "@react-spectrum/utils": "~3.11.5",
+    "clsx": "^1.2.1",
+    "colorjs.io": "~0.4.5",
+    "lodash.throttle": "~4.1.1",
+    "motion": "~12.23.12",
+    "react-aria": "~3.44.0",
+    "react-stately": "~3.42.0",
+    "zustand": "~4.5.4"
+  },
+  "overrides": {
+    "react-aria": {
+      "@types/react": "$@types/react"
+    }
+  },
+  "peerDependencies": {
+    "@duetds/date-picker": "~1.4.0",
+    "react": ">=18.2.0",
+    "tailwind-variants": "~0.2.1",
+    "tailwindcss": "~3.4.19",
+    "tailwindcss-themer": "~3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WestpacGEL/GEL-next.git"
+  }
+}

@@ -1,0 +1,51 @@
+### Default breadcrumb
+
+```jsx
+// Using the Link component (as NextLink) from 'next/Link'
+<div className="flex flex-col gap-5">
+  <Breadcrumb aria-label="Page transitions and the such">
+    <NextLink href="#home" passHref legacyBehavior>
+      <BreadcrumbItem isCurrent tag="a">Home</BreadcrumbItem>
+    </NextLink>
+  </Breadcrumb>
+  <Breadcrumb aria-label="Page transitions and the such">
+    <NextLink href="#home" passHref legacyBehavior>
+      <BreadcrumbItem tag="a">Home</BreadcrumbItem>
+    </NextLink>
+    <NextLink href="#personal" passHref legacyBehavior>
+      <BreadcrumbItem tag="a" isCurrent>Personal</BreadcrumbItem>
+    </NextLink>
+  </Breadcrumb>
+  <Breadcrumb aria-label="Page transitions and the such">
+    <NextLink href="#home" passHref legacyBehavior>
+      <BreadcrumbItem tag="a">Home</BreadcrumbItem>
+    </NextLink>
+    <NextLink href="#personal" passHref legacyBehavior>
+      <BreadcrumbItem tag="a">Personal</BreadcrumbItem>
+    </NextLink>
+    <NextLink href="#credit-cards" passHref legacyBehavior>
+      <BreadcrumbItem tag="a" isCurrent>Credit cards</BreadcrumbItem>
+    </NextLink>
+  </Breadcrumb>
+</div>
+```
+
+### As router
+
+```jsx
+<div>
+  <Breadcrumb aria-label="Page transitions and the such">
+    <NextLink href="#home" passHref legacyBehavior>
+      <BreadcrumbItem tag="a">Home</BreadcrumbItem>
+    </NextLink>
+    <NextLink href="#personal" passHref legacyBehavior>
+      <BreadcrumbItem tag="a">Personal</BreadcrumbItem>
+    </NextLink>
+    <NextLink href="#credit-cards" passHref legacyBehavior>
+      <BreadcrumbItem isCurrent tag="a">
+        Credit cards
+      </BreadcrumbItem>
+    </NextLink>
+  </Breadcrumb>
+</div>
+```

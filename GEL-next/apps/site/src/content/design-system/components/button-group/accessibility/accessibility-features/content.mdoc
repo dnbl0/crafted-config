@@ -1,0 +1,11 @@
+- Option buttons behave as radio inputs for assistive technology users. Leveraging standard HTML form inputs to maintain state and store data provides optimal support in assistive technologies.
+- An indicator outline appears around the button option when focused
+- The button shape, text and icon content is visible in Windows High Contrast Mode (WHCM). The ‘look’ styling (colour) is not visible in WHCM. The current option button has thicker top and bottom borders to indicate the selected state in WHCM.
+
+### Accessibility in the HTML
+
+- The button group uses the useRadioGroup and useRadio hooks from React Aria to handle the accessibility code. Read the [full specifications](https://reactspectrum.blob.core.windows.net/reactspectrum/d77b35e970e5549f66b47a83f07423f5c93b7297/docs/react-aria/useRadioGroup.html) for more information.
+
+### Keyboard support
+
+- Navigation pattern is consistent with radio inputs; arrow keys change the selection

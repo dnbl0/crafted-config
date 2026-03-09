@@ -1,0 +1,23 @@
+- Avoid changing the toggle switch styles (colour, border, size etc).
+- Do use the corresponding size when using switches with form inputs etc.
+- Don't use switches to answer Yes/No questions - they should reflect On/Off.
+
+{% layout layout=[6, 6] %}
+{% layout-area %}
+{% designSystemBodyImage
+   src="https://www.westpac.com.au/content/dam/public/gel/images/switches-dosdonts-do.png" /%}
+
+```html
+<p className="typography-body-10"><span className="text-success font-bold">Do</span> - Use switches to reflect On or Off.</p>
+```
+{% /layout-area %}
+
+{% layout-area %}
+{% designSystemBodyImage
+   src="https://www.westpac.com.au/content/dam/public/gel/images/switches-dosdonts-dont.png" /%}
+
+```html
+<p className="typography-body-10"><span className="text-danger font-bold">Avoid</span> - Using switches to indicate a Yes or No answer to a question.</p>
+```
+{% /layout-area %}
+{% /layout %}

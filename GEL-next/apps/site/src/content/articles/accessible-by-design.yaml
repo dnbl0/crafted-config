@@ -1,0 +1,31 @@
+name: Accessible By Design
+cardTitle: Accessible By Design
+description: >-
+  Let’s change the way we think about accessibility. Westpac’s Access and
+  Inclusion Director, Majella Knobel notes “People assume accessibility is only
+  about the 18% of people with disability. But everyone, to some extent, will
+  experience what it’s like to live with disability. It could be a change in
+  eyesight, an injured wrist or a recovery from surgery. Disability and
+  accessibility requirements will impact all of us at some point in our
+  lifetime.”
+thumbnail:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/accessible-by-design-hero.png
+  alt: >-
+    Hero image depicting icons usually associate with accessibility, Eye, Ear
+    and Person on a wheelchair.
+  height: 1212
+  width: 3168
+smallDescription: >-
+  The Westpac Group is committed to creating products that are perceivable,
+  operable, understandable, and robust for all users. Inclusive design is part
+  of our dna.
+image:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/accessible-by-design-hero.png
+  alt: >-
+    Hero image depicting icons usually associate with accessibility, Eye, Ear
+    and Person on a wheelchair.
+  height: 1212
+  width: 3168
+author: Michael Colibraro

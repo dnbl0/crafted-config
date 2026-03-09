@@ -1,0 +1,47 @@
+```jsx
+<div className="flex flex-col gap-2">
+  <div>
+    <Button look="hero" soft iconAfter={NewWindowIcon}>
+      New window
+    </Button>{' '}
+    <Button look="primary" iconAfter={DropDownIcon}>
+      Dropdown
+    </Button>{' '}
+    <Button look="hero" iconAfter={PrintIcon}>
+      Print
+    </Button>{' '}
+    <Button look="primary" soft iconAfter={RefreshIcon}>
+      Refresh
+    </Button>{' '}
+    <Button look="primary" iconAfter={SearchIcon}>
+      Search
+    </Button>
+  </div>
+  <div>
+    <Button look="faint" iconBefore={SearchIcon} /> <Button look="faint" iconBefore={PlayIcon} />{' '}
+    <Button look="faint" iconBefore={PauseIcon} /> <Button look="faint" iconBefore={CloseIcon} />{' '}
+    <Button look="faint" iconBefore={AddCircleIcon} />
+  </div>
+  <div>
+    <ComponentTitle>Icon positioning</ComponentTitle>
+    <div className="flex items-end gap-1">
+      <Button look="primary" iconAfter={InfoIcon}>
+        Icon right
+      </Button>
+      <Button look="primary" iconBefore={InfoIcon}>
+        Icon left
+      </Button>
+    </div>
+  </div>
+  <div>
+    <ComponentTitle>Block-level buttons with icons</ComponentTitle>
+    <Button look="primary" block justify iconAfter={ArrowRightIcon}>
+      Next step
+    </Button>
+    <br />
+    <Button look="primary" iconAfter={RefreshIcon} block>
+      Refresh list
+    </Button>
+  </div>
+</div>
+```

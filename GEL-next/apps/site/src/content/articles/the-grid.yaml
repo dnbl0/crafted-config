@@ -1,0 +1,20 @@
+name: The Grid
+cardTitle: The Grid
+description: >-
+  In recent years we’ve seen a fundamental shift in the hardware our customers
+  use to access information and services online. New devices are being
+  introduced every day. These devices come in a plethora of different screen
+  sizes and resolutions. We can’t keep creating custom solutions for every
+  device on the market. What do we do?
+thumbnail:
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/grid-card.png\r"
+  alt: Stylist illustration of grid columns
+smallDescription: >
+  Design flexible, robust layouts for any device, screen size and operating
+  system.
+image:
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/grid-hero.png\r"
+  alt: >-
+    Illustration showing the 6 breakpoints and where they are likely to be
+    applied ie. Phone, Tablet, Laptop etc.
+author: Justin Spencer

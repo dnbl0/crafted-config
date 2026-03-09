@@ -1,0 +1,96 @@
+```tsx
+() => {
+  const MOCK_COUNTRIES = [
+    {
+      title: 'Popular',
+      id: 'popular',
+      payees: [
+        {
+          code: 'IN',
+          name: 'India',
+          svg: (
+            <IndiaFlag />
+          ),
+        },
+        {
+          code: 'UK',
+          name: 'United Kingdom',
+          svg: (
+            <UnitedKingdomFlag />
+          ),
+        },
+        {
+          code: 'USA',
+          name: 'United States',
+          svg: (
+            <UnitedStatesFlag />
+          ),
+        },
+      ],
+    },
+    {
+      title: 'A',
+      id: 'a',
+      payees: [
+        {
+          code: 'AI',
+          name: 'Ascension Island',
+          svg: (
+            <AscensionIslandFlag />
+          ),
+        },
+        {
+          code: 'AN',
+          name: 'Andorra',
+          svg: (
+            <AndorraFlag />
+          ),
+        },
+        {
+          code: 'UA',
+          name: 'United Arab Emirates',
+          svg: (
+            <UnitedArabEmiratesFlag />
+          ),
+        },
+        {
+          code: 'AF',
+          name: 'Afghanistan',
+          svg: (
+            <AfghanistanFlag />
+          ),
+        },
+      ],
+    },
+  ];
+
+  return (
+    <div>
+      {MOCK_COUNTRIES.map(({ title, id, payees }) => (
+        <div key={id} className="flex flex-col gap-3">
+          <h3 className="m-0 font-normal">{title}</h3>
+          <div>
+            {payees.map(({ name, svg }) => {
+              return (
+<Grid>
+  <GridItem span={{ initial: 12, sm: 6 }}>
+                <FlexiCell
+                  tag="a"
+                  href="#"
+                  withBorder
+                  key={name}
+                  before={<FlexiCellAdornment>{svg}</FlexiCellAdornment>}
+                >
+                  <FlexiCellLabel tag="span">{name}</FlexiCellLabel>
+                </FlexiCell>
+</GridItem>
+</Grid>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+```

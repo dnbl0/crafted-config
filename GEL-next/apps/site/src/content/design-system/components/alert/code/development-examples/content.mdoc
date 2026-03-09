@@ -1,0 +1,60 @@
+### Default alert
+
+```jsx
+<Alert>This is a default alert.</Alert>
+```
+
+### Alert looks
+
+```jsx
+<div>
+  <ComponentTitle>Success</ComponentTitle>
+  <Alert look="success">
+    <strong>Well done!</strong> You successfully read this important alert message. <a href="#" className="hover:no-underline">Link</a>
+  </Alert>
+  <ComponentTitle>Info</ComponentTitle>
+  <Alert look="info">
+    <strong>Heads up!</strong> This alert needs your attention, but it’s not super important. <a href="#" className="hover:no-underline">Link</a>
+  </Alert>
+  <ComponentTitle>Warning</ComponentTitle>
+  <Alert look="warning">
+    <strong>Warning!</strong> Better check yourself, you’re not looking too good. <a href="#" className="hover:no-underline">Link</a>
+  </Alert>
+  <ComponentTitle>Danger</ComponentTitle>
+  <Alert look="danger">
+    <strong>Oh snap!</strong> Change a few things up and try submitting again. <a href="#" className="hover:no-underline">Link</a>
+  </Alert>
+  <ComponentTitle>System</ComponentTitle>
+  <Alert look="system">
+    <strong>System Error 8942:</strong> The server is no responding. Please try again later. Sorry for the
+    inconvenience. <a href="#" className="hover:no-underline">Link</a>
+  </Alert>
+</div>
+```
+
+### Dismissible alert
+
+```jsx
+<Alert look="info" dismissible>
+  <strong>Heads up!</strong> This alert needs your attention, but it’s not super important. <a href="#" className="hover:no-underline">Link</a>
+</Alert>
+```
+
+### Icon sizes
+
+```jsx
+<div>
+     <ComponentTitle>Medium</ComponentTitle>
+      <Alert look="info" iconSize="medium" mode="text">
+        This alert has a <strong>Medium</strong> icon.
+      </Alert>
+      <ComponentTitle>Small</ComponentTitle>
+      <Alert look="info" iconSize="small" mode="text">
+        This alert has a <strong>Small</strong> icon.
+      </Alert>
+      <ComponentTitle>Extra Small</ComponentTitle>
+      <Alert look="info" iconSize="xsmall" mode="text">
+       This alert has an <strong>Extra Small</strong> icon.
+      </Alert>
+</div>
+```

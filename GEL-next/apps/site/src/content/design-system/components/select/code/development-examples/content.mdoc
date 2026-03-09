@@ -1,0 +1,69 @@
+### Default
+
+```tsx
+<div className="flex flex-col gap-4">
+  <Select className="w-full">
+    <option>Select</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+  </Select>
+</div>
+```
+
+### Select sizes
+
+```tsx
+() => {
+  const SIZES = ['small', 'medium', 'large', 'xlarge'] as const;
+  return (
+      <div className="flex flex-col gap-4">
+        {SIZES.map(size => (
+          <div key={size}>
+            <Select className="w-full" size={size}>
+              <option>{size}</option>
+              <option>1</option>
+              <option>2</option>
+            </Select>
+          </div>
+        ))}
+      </div>
+
+  );
+};
+```
+
+### Different status
+
+```jsx
+<div className="flex flex-col gap-4">
+
+    <p className="typography-body-10 text-muted">
+      <em>Invalid</em>
+      </p>
+
+    <div>
+      <Select invalid className="w-full">
+        <option>Invalid</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </Select>
+    </div>
+    <div>
+    </div>
+
+    <p className="typography-body-10 text-muted">
+      <em>Disabled</em>
+      </p>
+    <div>
+      <Select disabled className="w-full">
+        <option>Disabled</option>
+      </Select>
+    </div>
+
+
+    <div />
+
+</div>
+```

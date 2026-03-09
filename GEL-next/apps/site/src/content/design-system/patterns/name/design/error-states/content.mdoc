@@ -1,0 +1,18 @@
+The error message should always sit above the input field to give context. The error icon helps draw the eye by disrupting the flow of text at the starting point of the sentence, and aids in accessibility for those who may be colour impaired and not see the colour change.
+
+### Simple name with error
+
+```tsx
+<Form spacing="large">
+  <FormGroup>
+    <Field label="Given name">
+      <Input size="large" className="w-6/12" />
+    </Field>
+  </FormGroup>
+  <FormGroup>
+    <Field label="Family name" errorMessage="Error message goes here if activated">
+      <Input invalid size="large" className="w-6/12" />
+    </Field>
+  </FormGroup>
+</Form>
+```

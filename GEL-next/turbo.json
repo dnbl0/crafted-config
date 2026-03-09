@@ -1,0 +1,41 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "NODE_ENV",
+    "NEXT_PUBLIC_GIT_REPO_OWNER",
+    "NEXT_PUBLIC_GIT_REPO_SLUG",
+    "VERCEL_LOGS_SECRET",
+    "NEXT_PUBLIC_ANALYTICS_APP_MEASUREMENT",
+    "NEXT_PUBLIC_ANALYTICS_SCRIPT_SRC"
+  ],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "cache": false
+    },
+    "build:watch": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "cache": false
+    },
+    "lint": {
+      "outputs": [],
+      "cache": false
+    },
+    "lint:fix": {
+      "outputs": [],
+      "cache": false
+    },
+    "test": {
+      "outputs": [],
+      "cache": false
+    },
+    "dev": {
+      "cache": false
+    },
+    "check-types": {
+      "cache": false
+    }
+  }
+}

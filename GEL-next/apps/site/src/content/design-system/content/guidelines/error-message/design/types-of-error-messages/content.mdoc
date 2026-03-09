@@ -1,0 +1,37 @@
+### Blank field errors
+
+If a customer hasn’t filled in a required field, include the name of the field to maximise clarity. Avoid ambiguous error messages that could apply to any field such as ‘Enter a value’ or ‘This field is required’.
+
+```tsx
+<Field
+  label="Email address"
+  errorMessage="Enter an email address in the format: youremail@example.com"
+  hintMessage="Make sure your email address is correct as we will use it to confirm your account"
+>
+  <Input invalid size="large" className="w-6/12" />
+</Field>
+```
+
+### Formatting errors
+
+Formatting errors are shown when someone enters information in an unexpected or incorrect way. Phone numbers, email addresses and dates are examples of fields that need specific formatting. In these cases, it’s best to suggest how someone should enter the information.
+
+For example, for an error relating to a phone number:
+
+```tsx
+<Field
+  label="Phone number"
+  errorMessage="Enter a number in the format: 2135096995, 213-509-6995 or (213) 509-6995">
+  <Input invalid size="large" className="w-6/12" />
+</Field>
+```
+
+Keep inline error messages brief. There’s no need to include a full stop at the end. If two sentences are required, insert a full stop to separate them, leaving out the full stop at the end.
+
+```jsx
+<div>
+<h4 className="typography-body-10 text-muted mb-3">For example:</h4>
+<p className="typography-body-10 ml-4"><Alert look="danger" iconSize="xsmall" mode="text">Enter an address</Alert></p>
+<p className="typography-body-10 ml-4"><Alert look="danger" iconSize="xsmall" mode="text">We’re currently having technical issues. Try again later</Alert></p>
+</div>
+```

@@ -1,0 +1,16 @@
+name: Bullet points & numbered lists
+description: >-
+  Bullet points and numbered lists are used to make it easier to understand a
+  series of items.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Bullet points and numbered lists
+      slug: bullet-points-numbered-lists
+    noTitle: true
+    noDemo: true
+accessibility: []
+relatedComponents: []
+code: []

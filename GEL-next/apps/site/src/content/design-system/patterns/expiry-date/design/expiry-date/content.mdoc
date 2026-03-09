@@ -1,0 +1,52 @@
+### Base pattern
+
+This pattern gives clear instructions regarding format with an easily understood input field. Keyboard entry is a fast and accessible way of capturing information.
+
+Use this pattern when there are large data sets so users are not required to scroll or swipe endlessly.
+
+This pattern exists as a [widget in the WDP system](https://one.dev1.ui.westpac.com.au/react/gel/docs/6.17.4/index.html?path=/story/widgets-expirydate--basic).
+
+```tsx
+<FormGroup>
+  <FormLabel>Expiry date</FormLabel>
+  <FormHint>Example: 03 2020</FormHint>
+  <fieldset className="flex gap-2">
+    <Field label="Month" labelSize="small">
+      <Input type="number" size="large" pattern="[0-9]*" min="1" max="12" autoComplete="bday-month" />
+    </Field>
+    <Field label="Year" labelSize="small">
+      <Input className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" />
+    </Field>
+  </fieldset>
+</FormGroup>
+```
+
+### Date range
+
+When databases have short and defined ranges, using select boxes can assist in matching real world card details and reduce errors. For example, a credit card will ask for an expiry date including month (12 options) and typically not have a yearly range beyond 6. This means users will not have the challenges of swiping through large sets of data.
+
+This pattern exists as a [widget in the WDP system](https://one.dev1.ui.westpac.com.au/react/gel/docs/6.17.4/index.html?path=/story/widgets-expirydate--range).
+
+```tsx
+<FormGroup>
+  <FormLabel>Expiry date</FormLabel>
+  <fieldset className="flex gap-2">
+    <Field label="Month" labelSize="small">
+      <Select size="large">
+        <option>Select</option>
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(value => (
+          <option value={value}>{value}</option>
+        ))}
+      </Select>
+    </Field>
+    <Field label="Year" labelSize="small">
+      <Select size="large">
+        <option>Select</option>
+        {[2023, 2024, 2025, 2026, 2027, 2028, 2029, 2030].map(value => (
+          <option value={value}>{value}</option>
+        ))}
+      </Select>
+    </Field>
+  </fieldset>
+</FormGroup>
+```

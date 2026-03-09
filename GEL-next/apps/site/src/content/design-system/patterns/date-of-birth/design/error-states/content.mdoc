@@ -1,0 +1,25 @@
+The error message should always sit above the input field to give context. The error icon helps draw the eye by disrupting the flow of text at the starting point of the sentence, and aids in accessibility for those who may be colour impaired and not see the colour change.
+
+The Date of birth pattern can isolate which field carries the error and highlight accordingly.
+
+If more than one field has an error, the errors stack in a group under the hint text as each input field (Day, Month, Year) is in a group.
+
+```tsx
+<FormGroup>
+  <FormLabel>Date of birth</FormLabel>
+  <FormHint>Example: 31 3 1980</FormHint>
+  <ErrorMessage message="Day must be valid" />
+  <ErrorMessage message="Year must be valid" />
+  <fieldset className="flex gap-2">
+    <Field label="Day" labelSize="small">
+      <Input type="number" size="large" pattern="[0-9]*" min="1" max="31" autoComplete="bday-day" invalid />
+    </Field>
+    <Field label="Month" labelSize="small">
+      <Input type="number" size="large" pattern="[0-9]*" min="1" max="12" autoComplete="bday-month" />
+    </Field>
+    <Field label="Year" labelSize="small">
+      <Input className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" invalid />
+    </Field>
+  </fieldset>
+</FormGroup>
+```

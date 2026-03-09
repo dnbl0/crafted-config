@@ -1,0 +1,24 @@
+name: Multi-brand made easy
+cardTitle: Multi-brand made easy
+description: >-
+  We’re a truly multi-brand organisation, which is why being able to create
+  individually branded customer experiences while re-using our technical
+  knowledge, digital assets and business processes is so important. This article
+  explains how we achieve this using the GEL Design System, its tools and
+  resources.
+thumbnail:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/multi-brand-made-easy-card.png
+  alt: .
+  height: 1212
+  width: 3168
+smallDescription: >-
+  Create individually branded customer experiences while re-using our technical
+  knowledge, digital assets and business processes.
+image:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/multi-brand-made-easy-hero.jpg
+  alt: Old-fashioned television with a St George dragon ad on the screen.
+  height: 1289
+  width: 2400
+author: Justin Spencer

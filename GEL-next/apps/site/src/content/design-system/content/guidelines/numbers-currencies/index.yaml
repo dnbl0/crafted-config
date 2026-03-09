@@ -1,0 +1,14 @@
+name: Numbers & currencies
+description: A guide to writing numbers and currencies.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Numbers and currencies
+      slug: numbers-currencies
+    noTitle: true
+    noDemo: true
+accessibility: []
+relatedComponents: []
+code: []

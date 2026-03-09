@@ -1,0 +1,103 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/logs",
+      "schedule": "0 5 * * *"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/articles/what-is-GEL",
+      "destination": "/articles/what-is-gel"
+    },
+    {
+      "source": "/design-system/development/get-started(.*)",
+      "destination": "/design-system/wbc/get-started/developers/1-set-up"
+    },
+    {
+      "source": "/design-system/accessibility/(.*)",
+      "destination": "/design-system/wbc/accessibility/$1"
+    },
+    {
+      "source": "/design-system/foundation/(.*)",
+      "destination": "/design-system/wbc/foundation/$1"
+    },
+    {
+      "source": "/design-system/components/(.*)",
+      "destination": "/design-system/wbc/components/$1"
+    },
+    {
+      "source": "/design-system/patterns/(.*)",
+      "destination": "/design-system/wbc/patterns/$1"
+    },
+    {
+      "source": "/design-system/development/(.*)",
+      "destination": "/design-system/wbc/development/$1"
+    },
+    {
+      "source": "/design-system/content/(.*)",
+      "destination": "/design-system/wbc/content/$1"
+    },
+    {
+      "source": "/design-system/design-tokens",
+      "destination": "/design-system/wbc/design-tokens"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/((?!api|keystatic|_next/static|_next/image|favicon.ico).*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'self'; upgrade-insecure-requests; img-src 'self' blob: data: res.cloudinary.com www.westpac.com.au; font-src 'self'; object-src 'none'; form-action 'self'; connect-src 'self' https://dpm.demdex.net https://vercel.live/; style-src 'self' 'unsafe-inline'; block-all-mixed-content;"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Vercel-CDN-Cache-Control",
+          "value": "max-age=3600"
+        },
+        {
+          "key": "CDN-Cache-Control",
+          "value": "max-age=3600"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/scripts/(.*)",
+      "headers": [
+        {
+          "key": "Vercel-CDN-Cache-Control",
+          "value": "max-age=3600"
+        },
+        {
+          "key": "CDN-Cache-Control",
+          "value": "max-age=3600"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+name: Think responsive
+cardTitle: Think responsive
+description: >-
+  An increasing number of people are accessing information and services on their
+  mobile devices. New devices are being introduced every day. We can’t keep
+  creating custom solutions for every device that hits the market. So, how do we
+  deal with the situation?
+thumbnail:
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/think-responsively-card.png\r"
+  alt: Illustration of a simplified head with a brain.
+smallDescription: >-
+  Future proof your design to ensure that our customers banking needs are always
+  catered for, any time, any place.
+image:
+  src: >
+    https://www.westpac.com.au/content/dam/public/gel/images/think-responsively-hero.jpg
+  alt: >-
+    Image showing a row of people sitting on a couch with their legs crossed
+    looking at different devices.
+author: Justin Spencer

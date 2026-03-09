@@ -1,0 +1,57 @@
+```tsx
+() => {
+  const brand = useBrand();
+
+  return (
+    <>
+      <div className="flex flex-col gap-4">
+        <div>
+          <ComponentTitle>Default</ComponentTitle>
+          <>
+            <Header brand={brand.key} />
+          </>
+        </div>
+
+        <div>
+          <ComponentTitle>With Sign Out </ComponentTitle>
+          <>
+            <Header brand={brand.key}>
+              <Button
+                look="faint"
+                onClick={() => {}}
+                size={{
+                  initial: 'small',
+                  sm: 'medium',
+                }}
+                soft
+              >
+                Sign Out
+              </Button>
+            </Header>
+          </>
+        </div>
+
+        <div>
+          <ComponentTitle>Logo in centre at small views (see demo)</ComponentTitle>
+          <>
+            <Header brand={brand.key} logoCenter />
+          </>
+        </div>
+        <div>
+          {' '}
+          <ComponentTitle>With back arrow</ComponentTitle>
+          <>
+            <Header brand={brand.key} leftIcon="arrow" />
+          </>
+        </div>
+        <div>
+          <ComponentTitle>With hamburger at small views (see demo)</ComponentTitle>
+          <>
+            <Header brand={brand.key} leftIcon="hamburger" />
+          </>
+        </div>
+      </div>
+    </>
+  );
+};
+```

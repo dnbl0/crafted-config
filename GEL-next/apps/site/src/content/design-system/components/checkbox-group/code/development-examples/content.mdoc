@@ -1,0 +1,212 @@
+This component was combined with RadioGroup in the old GEL, it is now it's own component as it using React Aria
+
+### Default form checks
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup 
+    className="col-span-1" 
+    label={<ComponentTitle>Checkbox</ComponentTitle>}
+    checkboxes={[
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
+    ]}
+  />
+</div>
+```
+
+### With default value
+
+```jsx
+<CheckboxGroup 
+  label={<ComponentTitle>Checkbox</ComponentTitle>} 
+  defaultValue={['1', '3']}
+  checkboxes={[
+    { value: "1", label: "Option 1", isDisabled: true},
+    { value: "2", label: "Option 2" },
+    { value: "3", label: "Option 3" },
+  ]}
+/>
+```
+
+### With onChange
+
+```jsx
+() => {
+  const [formCheckValue, setFormCheckValue] = useState(['1', '3']);
+
+  return (
+    <CheckboxGroup
+      value={formCheckValue}
+      onChange={(value, event) => setFormCheckValue(value)}
+      label={<ComponentTitle>Checkbox</ComponentTitle>}
+      checkboxes={[
+        { value: "1", label: "Option 1" },
+        { value: "2", label: "Option 2" },
+        { value: "3", label: "Option 3" },
+      ]}
+    />
+  );
+};
+```
+
+### Checkbox sizes
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup 
+    className="col-span-1" 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    size="medium"
+    checkboxes={[
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
+    ]}
+  />
+  <CheckboxGroup 
+    className="col-span-1" 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large"
+    checkboxes={[
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
+    ]}
+  />
+</div>
+```
+
+### Checkboxes with hint text
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup 
+    className="col-span-1" 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    size="medium"
+    checkboxes={[
+      { value: "Option 1", label: "Option 1", hint: "This is hint text" },
+      { value: "Option 2", label: "Option 2", hint: "This is hint text" },
+      { value: "Option 3", label: "Option 3", hint: "This is hint text" },
+    ]}
+  />
+  <CheckboxGroup 
+    className="col-span-1" 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large"
+    checkboxes={[
+      { value: "Option 1", label: "Option 1", hint: "This is hint text" },
+      { value: "Option 2", label: "Option 2", hint: "This is hint text" },
+      { value: "Option 3", label: "Option 3", hint: "This is hint text" },
+    ]}
+  />
+</div>
+```
+
+### Inline
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    orientation="horizontal"
+    checkboxes={[
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
+    ]}
+  />
+
+  <CheckboxGroup 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large" 
+    orientation="horizontal"
+    checkboxes={[
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
+    ]}
+  />
+</div>
+```
+
+### CheckboxGroup with Reveal
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    size="medium" 
+    showAmount={1}
+    checkboxes={[
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
+    ]}
+  />
+  <CheckboxGroup 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large" 
+    showAmount={1}
+    checkboxes={[
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
+    ]}  
+  />
+</div>
+```
+
+### CheckboxGroup completely disabled
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    size="medium" 
+    isDisabled
+    checkboxes={[
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
+    ]}
+  />
+  <CheckboxGroup 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large" 
+    isDisabled
+    checkboxes={[
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
+    ]}
+  />
+</div>
+```
+
+### CheckboxGroup with individual items disabled
+
+```jsx
+<div className="grid grid-cols-2">
+  <CheckboxGroup 
+    label={<ComponentTitle>Medium</ComponentTitle>} 
+    size="medium"
+    checkboxes={[
+      { value: "Option 1", label: "Option 1", isDisabled: true },
+      { value: "Option 2", label: "Option 2" },
+      { value: "Option 3", label: "Option 3" },
+    ]}
+  />
+  <CheckboxGroup 
+    label={<ComponentTitle>Large</ComponentTitle>} 
+    size="large"
+    checkboxes={[
+      { value: "Option 1", label: "Option 1" },
+      { value: "Option 2", label: "Option 2", isDisabled: true  },
+      { value: "Option 3", label: "Option 3" },
+    ]}
+  />
+</div>
+```

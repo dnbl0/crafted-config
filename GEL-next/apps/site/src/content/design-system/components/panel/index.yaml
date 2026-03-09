@@ -1,0 +1,61 @@
+name: Panels
+description: >-
+  Panels are containers used to group and separate content with a strong intent
+  or action, or to simply communicate important information.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Default panel
+      slug: default-panel
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Faint panel
+      slug: faint-panel
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Panel with table
+      slug: panel-with-table
+    noTitle: false
+    noDemo: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Visual design
+      slug: visual-design
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Dos and don’ts
+      slug: dos-and-donts
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Where is this available?
+      slug: where-is-this-available
+    noTitle: false
+    noDemo: true
+accessibility:
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+relatedComponents:
+  - title: Accordions
+    slug: components/accordion
+  - title: Tabs
+    slug: components/tabs
+  - title: Wells
+    slug: components/well
+  - title: Tables
+    slug: components/table
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
+    noTitle: false

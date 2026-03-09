@@ -1,0 +1,16 @@
+name: Bolding & underlining
+description: >-
+  Bolding and underlining are used to emphasise words. We only use bolding in
+  certain situations.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Bolding and underlining
+      slug: bolding-underlining
+    noTitle: true
+    noDemo: true
+accessibility: []
+relatedComponents: []
+code: []

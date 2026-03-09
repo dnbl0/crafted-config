@@ -1,0 +1,16 @@
+name: Superscripts & trademarks
+description: >-
+  Superscripts and trademarks are characters that are set slightly above normal
+  lines of texts.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Superscripts
+      slug: superscripts
+    noTitle: true
+    noDemo: true
+accessibility: []
+relatedComponents: []
+code: []

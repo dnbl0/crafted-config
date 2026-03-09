@@ -1,0 +1,21 @@
+name: Master Reference Page
+cardTitle: Master reference page
+description: >-
+  Our global visual language is shared across all our brands. We have a library
+  of carefully crafted user interface icons for use in our designs. This article
+  discusses the iconography design principles and provides usage guidelines to
+  ensure that we design icons consistently and use them correctly. For
+  information about embedding, sizing and styling icons please refer to the
+  Design System Iconography.
+thumbnail:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/design-with-gel-card.png
+  height: 1212
+  width: 3168
+smallDescription: Use our global visual language to communicate and engage with customers.
+image:
+  src: >-
+    https://www.westpac.com.au/content/dam/public/gel/images/design-with-gel-card.png
+  height: 1212
+  width: 3168
+author: Justin Spencer

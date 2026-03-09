@@ -1,0 +1,44 @@
+name: Wells
+description: >-
+  Wells are containers with simple text. They are designed to house content
+  without interfering with the primary content on a page.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Well
+      slug: default-well
+    noTitle: false
+    noDemo: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Visual design
+      slug: visual-design
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Where is this available?
+      slug: where-is-this-available
+    noTitle: false
+    noDemo: true
+accessibility:
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+relatedComponents:
+  - title: Panels
+    slug: components/panel
+  - title: Accordions
+    slug: components/accordion
+  - title: Tabs
+    slug: components/tabs
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
+    noTitle: false

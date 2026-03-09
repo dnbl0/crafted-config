@@ -1,0 +1,11 @@
+- The accordions are implemented as a set of buttons. This approach has shown to provide a better user experience.
+- An indicator outline appears around the toggle buttons when focused
+- The accordion shape, text and accordion toggle icons are visible in Windows High Contrast Mode
+
+### Accessibility in the HTML
+
+The accordion uses the useAccordion and useAccordionItem hooks from React Aria to handle the accessibility code. Read the [full specifications](https://reactspectrum.blob.core.windows.net/reactspectrum/d77b35e970e5549f66b47a83f07423f5c93b7297/docs/react-aria/useAccordion.html) for more information.
+
+### Keyboard support
+
+Keyboard users navigate the accordions toggles as a set of buttons. Keyboard interaction requires use of ‘tab’ and ‘enter’ (or ‘space’) keys to select, rather than arrow keys.

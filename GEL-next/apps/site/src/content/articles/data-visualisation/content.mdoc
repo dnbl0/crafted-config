@@ -1,0 +1,352 @@
+## Accessibility
+
+Ensuring that your graphs and charts comply with WCAG’s AA accessibility standards is the number one priority. The data visualisation system has catered for this using several methods.
+
+### Supporting data
+
+From an accessibility perspective supporting data is your friend. Put simply; supporting data is the information used in a graph or chart. This includes the data itself and (if possible) a caption to describe the key findings. As a best practice, all charts must contain supporting data within the meta tags, this allows screen readers to relay the information however, it does not necessarily make your chart accessible.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig1-.png", alt: "Horizontal bar chart showing an example data visualisation of annual spending", height: 1098, width: 1125}
+   caption="Fig.1 Data visualisation"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig2-supporting.png", alt: "Example of the supporting data required to communicate this chart.", height: 1098, width: 1125}
+   caption="Fig.2 Supporting data"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+To further meet our accessibility requirements, any charts which use multiple categories must also display supporting data. Simply relying on the data being stored in the meta tags is not enough, we must also show it on screen. The example below demonstrates why this is the case.
+
+Fig.3 (below) shows our lovely colourful pie chart. All the colours in this chart pass the 3:1 contrast ratio. To all intents and purposes this chart would seem to be accessible, sadly this is not the case. Fig.4 demonstrates what a vision impaired customer would see. This is known as Achromatopsia (total colour blindness).
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig3.png", alt: "Pie chart with each section depicted in a different bright colour, this version of the pie chart is not accessible", height: 1620, width: 1125}
+   caption="Fig.3"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig4.png", alt: "Pie chart with each section depicted in a different shades of grey, this version of the pie chart is not accessible", height: 1620, width: 1125}
+   caption="Fig.4"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+The issue lies in the key (fig.4). There is not enough contrast in these greys to identify each category so it’s a fail. To meet our accessibility requirements supporting data must be displayed with this chart.
+
+To make our pie chart accessible we have to display the supporting data as shown below (fig.6)
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig5.png", alt: "Pie chart that does not provide supporting data, this version of the pie chart is not accessible", height: 1620, width: 1125}
+   caption="Fig.5"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig6.png", alt: "Pie chart that does provide supporting data, this version of the pie chart is accessible", height: 2070, width: 1125}
+   caption="Fig.6"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+The exception to this rule is where charts only display a single category as shown below (fig.7 and fig.8).
+
+These charts only use one category and therefore do not require a key. Providing the colour used in these charts passes the 3:1 minimum contrast ratio there is no need to display supporting data. We’ll cover this in more detail later.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig7.png", alt: "A line graph chart displaying only one category, which does not require a key, this chart is accessible", height: 1380, width: 1125}
+   caption="Fig.7"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig8.png", alt: "A line bar chart displaying only one category, which does not require a key, this chart is accessible", height: 1380, width: 1125}
+   caption="Fig.8"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+## The colour system
+
+From a multi-brand perspective the colour system is our friend. As a rule of thumb we recommend designers always assume that their chart (or indeed anything they design at Westpac) will at some stage need to be multi-brand.
+
+To assist designers with this we’ve created a data visualisation colour palette. Each brand provides 6 colours (A-F) for designers to use in their charts. Each colour has a corresponding 50% tint and 30% opacity. This set of 18 colours provides enormous scope and flexibility for a wide range of complex data visualisations. With that in mind, please avoid using additional colours, tints and opacities.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-wbc.png", alt: "Data visualisation colour chart for Westpac brand showing six colours as 100% solid 50% tint and 30% opacity.", height: 1012, width: 1276}
+   spacing="reduced" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-stg.png", alt: "Data visualisation colour chart for St.George brand showing six colours as 100% solid 50% tint and 30% opacity.", height: 1012, width: 1276}
+   spacing="reduced" /%}
+{% /layout-area %}
+{% /layout %}
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-bom.png", alt: "Data visualisation colour chart for Bank of Melbourne brand showing six colours as 100% solid 50% tint and 30% opacity.", height: 1012, width: 1276}
+   spacing="reduced" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-bsa.png", alt: "Data visualisation colour chart for BankSA brand showing six colours as 100% solid 50% tint and 30% opacity.", height: 1012, width: 1276}
+   spacing="reduced" /%}
+{% /layout-area %}
+{% /layout %}
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-rams.png", alt: "Data visualisation colour chart for RAMS brand showing six colours as 100% solid 50% tint and 30% opacity.", height: 1012, width: 1276}
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-wbg.png", alt: "Data visualisation colour chart for Westpac Group brand showing six colours as 100% solid 50% tint and 30% opacity.", height: 1012, width: 1276}
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+## Examples
+
+To give you some context, the following examples show how these colours are applied. Circular swatches indicate the colours used in the graph. In fig.9 below the pie chart uses the solid colours A-D as shown in fig.10.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig9.png", alt: "Pie chart using solid colours", height: 972, width: 1125}
+   caption="Fig.9"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig10.png", alt: "Colour swatches indicating which colours are solid", height: 972, width: 1125}
+   caption="Fig.10"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+The comparison chart in fig.11 shows how a tint is used with its corresponding solid colour (fig.12) and the area chart in fig.13 shows how the transparent colours are used with their corresponding solid colours (fig 14).
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig11.png", alt: "Bar chart using solid a colour and it's respective tint", height: 1179, width: 1125}
+   caption="Fig.11"
+   spacing="reduced" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig12.png", alt: "Colour swatches indicating the solid and tint colour used in the bar graph in figure Fig.11", height: 1179, width: 1125}
+   caption="Fig.12"
+   spacing="reduced" /%}
+{% /layout-area %}
+{% /layout %}
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig13.png", alt: "Area chart using solid a colour and it's respective transparent version", height: 1179, width: 1125}
+   caption="Fig.13"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig14.png", alt: "Colour swatches indicating the solid and transparent colour used in the area graph in figure Fig.13", height: 1179, width: 1125}
+   caption="Fig.14"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+## Colour hierarchy
+
+We just looked at where to use these colours. Now we’re going to look at when to use them. As mentioned earlier, each brand provides 6 colours for designers to use in their charts. See fig.15 below.
+
+The first 4 colours (A–D) are the main set and should ALWAYS be the first choice. The last 2 colours (E–F) are backup colours and must ONLY be used as a last resort for charts that require more than 4 categories.
+
+{% articleBodyImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig15.png", alt: "Colour swatches indicating main colours and backups", height: 610, width: 1544}
+   title="Fig.15"
+   type="body" /%}
+
+Incorrect use of these colours will dilute the consistency and integrity of the brand. If you’re unsure how to apply these colours or have any concerns please ask your design principle for help. We also recommend informing the business whenever you use the backup colours in charts as they are strictly governed, and only for use in edge-case scenarios.
+
+## Do’s and don’ts
+
+There are 4 key principles that guide the correct use of this colour system. Applying these principles will ensure that your charts are on-brand, accessible and systemised allowing you to re-use the chart in any of our Westpac Group brands. Not only will this save time, it will also reduce the margin for error and increase consistency.
+
+### 1. Use the main set first
+
+Always use solid colours from the main set before using colours from the backup set. The chart below (fig.16) uses the first 4 colours in the set (A–D), this is correct. The chart on the right (fig.17) uses the orange (colour F) from the backup set before exhausting the first 4 colours. This is not correct and will damage the integrity of the brand.
+
+Always use colours from the main set before using colours from the backup set.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig16.png", alt: "Graph using main colours only, this is correct", height: 1869, width: 1125}
+   caption="Fig.16"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig17.png", alt: "Graph using backup colours when main colours are available, this is incorrect.", height: 1869, width: 1125}
+   caption="Fig.17"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+### 2. Don't use tints on their own
+
+Avoid using the tint (or transparent) variations on their own. As mentioned earlier, these variations are intended to be used in conjunction with their corresponding solid colour. They should not be used in isolation. The comparison chart below (fig.18) shows the correct use of a solid colour with its corresponding tint, whereas fig.19 is an example of incorrect use of the tints.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig18.png", alt: "Bar graph using solid and respective tint or transparent colours, this is correct.", height: 2094, width: 1125}
+   caption="Fig.18"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig19.png", alt: "Bar graph using only tint or transparent colours, this is incorrect.", height: 2094, width: 1125}
+   caption="Fig.19"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+### 3. Don't mix and match
+
+Only use the tint (and transparent) variations with their corresponding solid colours (as shown in fig.20). Never use tint or transparent variations with an alternative solid colour (fig.21). Tints and transparencies must only be used with their corresponding solid colours.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig20.png", alt: "Bar graph using solid and respective tint or transparent colours, this is correct.", height: 2121, width: 1125}
+   caption="Fig.20"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig21.png", alt: "Bar graph using solid and respective tint or transparent versions of a different colour, this is incorrect.", height: 2121, width: 1125}
+   caption="Fig.21"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+### 4. Know the accessible colours
+
+As mentioned earlier, simple charts that use a single category are not required to display their supporting data, however they must use an accessible colour that passes the minimum 3:1 contrast ratio for UI components and graphical objects.
+
+Fig.23 below shows a simple Westpac line graph. This graph uses colour C from the Westpac data visualisation palette. When this graph is converted to Rams (fig.24) it automatically applies colour C from the Rams palette. Unfortunately the Rams colour is not accessible and therefore the graph will fail to meet accessibility requirements.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig23.png", alt: "Westpac branded line graph using colour C this is accessible", height: 1557, width: 1125}
+   caption="Fig.23"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig24.png", alt: "RAMS branded line graph using colour C this is not accessible", height: 1557, width: 1125}
+   caption="Fig.24"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+If your chart needs to be multi-brand (and we’ll assume it does) you will need to ensure that whatever colour you choose is accessible in all of the brand palettes.
+
+To make life easier we’ve structured the colour tokens to accommodate this scenario by making the first 2 colours (A & B) accessible in all brands. There are other accessible colours in these palettes, however, A and B are the only colours that are consistently accessible across each brand.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-wbc.png", alt: "Data visualisation colour chart for Westpac brand showing colours A, B, C, D, E, F. Colours A and B are accessible.", height: 729, width: 1125}
+   spacing="reduced" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-stg.png", alt: "Data visualisation colour chart for St.George brand showing colours A, B, C, D, E, F. Colours A and B are accessible.", height: 729, width: 1125}
+   spacing="reduced" /%}
+{% /layout-area %}
+{% /layout %}
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-bom.png", alt: "Data visualisation colour chart for Bank of Melbourne brand showing colours A, B, C, D, E, F. Colours A and B are accessible.", height: 729, width: 1125}
+   spacing="reduced" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-bsa.png", alt: "Data visualisation colour chart for BankSA brand showing colours A, B, C, D, E, F. Colours A and B are accessible.", height: 729, width: 1125}
+   spacing="reduced" /%}
+{% /layout-area %}
+{% /layout %}
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-rams.png", alt: "Data visualisation colour chart for RAMS brand showing colours A, B, C, D, E, F. Colours A and B are accessible.", height: 729, width: 1125}
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-ally-wbg.png", alt: "Data visualisation colour chart for Westpac Group brand showing colours A, B, C, D, E, F. Colours A and B are accessible.", height: 729, width: 1125}
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+If you want to take advantage of this system, using either of these colours (A or B) will ensure that the charts are both accessible and multi-brand with no additional re-work. Fig.25 shows our updated Westpac line graph which now uses colour A. When this graph is converted to Rams (Fig.26) it automatically applies colour A from the Rams palette which is also accessible.
+
+{% layout layout=[4, 4] %}
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig25.png", alt: "Westpac branded line graph using colour A this is accessible", height: 1557, width: 1125}
+   caption="Fig.25"
+   spacing="default" /%}
+{% /layout-area %}
+
+{% layout-area %}
+{% articleImage
+   image={src: "https://www.westpac.com.au/content/dam/public/gel/images/data-viz-fig26.png", alt: "RAMS branded line graph using colour A this is accessible", height: 1557, width: 1125}
+   caption="Fig.26"
+   spacing="default" /%}
+{% /layout-area %}
+{% /layout %}
+
+Hopefully this has given you some direction on how to create data visualisations. At the time of writing this system was in its infancy, we'd love to see what you do with this and get your feedback, comments and ideas so we can continue to improve the way we display and communicate data to our customers.

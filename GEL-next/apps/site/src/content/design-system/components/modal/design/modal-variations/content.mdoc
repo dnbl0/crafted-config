@@ -1,0 +1,42 @@
+Modals are configurable. Choose how they are dismissed, whether they have a footer, or what the footer contains. Modals can house whatever content you require of them, allowing you to define your experience. Make sure you always provide a clear way forward. Select from the buttons below to view the modals.
+
+```jsx
+() => {
+  const portalContainer = document.getElementById('demo-content');
+  const noFooterState = useOverlayTriggerState({});
+  const noDismissState = useOverlayTriggerState({});
+
+  return (
+    <div className="flex justify-center gap-2">
+      <Modal zIndex={1020}  state={noFooterState} title="Modal title" isDismissable onClose={noFooterState.close} portalContainer={portalContainer ?? undefined}>
+        <ModalBody>
+          <p>
+            The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
+            against a silvery climbing phosphorescence that grew and grew.
+          </p>
+        </ModalBody>
+      </Modal>
+      <Button soft look="primary" onClick={noFooterState.open}>
+        No footer
+      </Button>
+      <Modal zIndex={1020}  isKeyboardDismissDisabled state={noDismissState} title="Modal title" portalContainer={portalContainer ?? undefined}>
+        <ModalBody>
+          <p>
+            The line of the horizon was clear and hard against the sky, and in one particular quarter it showed black
+            against a silvery climbing phosphorescence that grew and grew.
+          </p>
+        </ModalBody>
+        <ModalFooter
+          primaryLabel="Label"
+          primaryOnClick={noDismissState.close}
+          secondaryLabel="Close"
+          secondaryOnClick={noDismissState.close}
+        />
+      </Modal>
+      <Button soft look="primary" onClick={noDismissState.open}>
+        No dismiss button
+      </Button>
+    </div>
+  );
+};
+```

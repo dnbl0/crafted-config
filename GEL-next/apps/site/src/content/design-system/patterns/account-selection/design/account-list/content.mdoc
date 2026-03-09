@@ -1,0 +1,96 @@
+In a scenario where you have a list of accounts of different types, they can be grouped into categories to help users easily scan.
+
+```
+() => {
+  const MOCK_ACCOUNTS = [
+    {
+      title: 'Cash',
+      id: 'cash',
+      accounts: [
+        {
+          name: 'Westpac Life',
+          amount: '$7,540.34',
+          number: '732-123 746587',
+        },
+        {
+          name: 'Westpac Choice',
+          amount: '$1,234.99',
+          number: '732-123 746587',
+hint: 'available $498.23',
+        },
+        {
+          name: 'Offset account for home loan',
+          amount: '$20,000.00',
+          number: '732-123 123456',
+        },
+      ],
+    },
+    {
+      title: 'Loans',
+      id: 'loans',
+      accounts: [
+        {
+          name: 'Home loan',
+          amount: '$860,344.57',
+          number: '123-456 1234567',
+hint: 'available $1,237.46',
+        },
+        {
+          name: 'Car loan',
+          amount: '$10,999.99',
+          number: '123-456 1234567',
+hint: 'available $103.62',
+        },
+      ],
+    },
+    {
+      title: 'Credit cards',
+      id: 'credit-cards',
+      accounts: [
+        {
+          name: 'Altitude Black World Mastercard',
+          amount: '-$3,957.57',
+          number: 'Card ending in 1234',
+hint: 'available $6,042.43',
+        },
+      ],
+    },
+  ];
+
+  return (
+    <>
+      {MOCK_ACCOUNTS.map(({ title, id, accounts }) => (
+          <div key={id}>
+            <h3 className="mb-2 font-normal">{title}</h3>
+            {accounts.map(({ name, amount, number, hint }) => (
+<Grid>
+  <GridItem span={{ initial: 12, sm: 6 }}>
+              <FlexiCell
+                tag="a"
+                href="#"
+                withBorder
+                key={name}
+                after={
+                  <FlexiCellAdornment>
+                    <FlexiCellLabel className="font-semibold" rightLabel tag="h4">
+                      {amount}
+                    </FlexiCellLabel>
+                    <FlexiCellHint>{hint}</FlexiCellHint>
+                  </FlexiCellAdornment>
+                }
+              >
+                <FlexiCellLabel className="font-normal" tag="h4">
+                  {name}
+                </FlexiCellLabel>
+                <FlexiCellHint>{number}</FlexiCellHint>
+              </FlexiCell>
+  </GridItem>
+</Grid>
+            ))}
+          </div>
+      ))}
+    </>
+  );
+};
+
+```

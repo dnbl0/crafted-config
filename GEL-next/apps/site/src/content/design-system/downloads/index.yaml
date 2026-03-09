@@ -1,0 +1,10 @@
+name: Downloads
+design:
+  - title:
+      name: Designers
+      slug: designers
+    noTitle: false
+    noDemo: false
+accessibility: []
+relatedComponents: []
+code: []

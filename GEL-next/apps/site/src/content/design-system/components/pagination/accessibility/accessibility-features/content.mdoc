@@ -1,0 +1,16 @@
+- A `<nav>` element labeled “Page number” identifies the structure as a page navigation menu and makes it a navigation landmark so that it is easy to locate
+- The navigation list is announced as expected in all screen readers including VoiceOver
+- The current navigation item is flagged to indicate the current page to assistive technologies
+- A visually hidden status element is updated to announce the current page
+- An indicator outline appears around the navigation item when focused
+- The pagination shape and text content is visible in Windows High Contrast Mode
+
+### Accessibility in the HTML
+
+- `<nav aria-label="Page number">`: Provides a label that describes the type of navigation
+- `<button aria-current="page">`&nbsp;/&nbsp;`<a aria-current="page">`: Currently selected navigation item is marked with&nbsp;*aria-current*. Depending on how routing is implemented (updating state vs linking to a new URL), an anchor (link) element may be better suited.
+- `<span role="status">`: A visually hidden&nbsp;*span*&nbsp;element with “status”&nbsp;*role*&nbsp;is updated with the current page number text to notify assistive technologies
+
+### Keyboard support
+
+Keyboard users navigate the pagination items as they would with a standard button or link.

@@ -1,0 +1,12 @@
+- An indicator outline appears around the checkbox toggle when focused
+- Focus moves to the first new checkbox option when further options are revealed
+- The checkbox toggle and label text is visible in Windows High Contrast Mode (WHCM). The checkbox toggle tick is rendered using CSS borders to ensure visibility in WHCM.
+
+### Accessibility in the HTML
+
+- `<button aria-expanded="true|false" >`: Checkbox with reveal toggle button uses aria-expanded attribute to indicate collapse state.
+- The checkbox uses the useCheckboxGroup and useCheckboxGroupItem hooks from React Aria to handle the accessibility code. Read the [full specifications](https://reactspectrum.blob.core.windows.net/reactspectrum/d77b35e970e5549f66b47a83f07423f5c93b7297/docs/react-aria/useCheckboxGroup.html) for more information.
+
+### Keyboard support
+
+Navigation pattern is consistent with standard checkbox inputs;&nbsp;*tab*&nbsp;key navigates the checkbox options,&nbsp;*space*&nbsp;key toggles the selection.

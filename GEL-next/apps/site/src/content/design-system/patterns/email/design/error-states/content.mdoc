@@ -1,0 +1,52 @@
+The error message should always sit above the input field to give context. The error icon helps draw the eye by disrupting the flow of text at the starting point of the sentence, and aids in accessibility for those who may be colour impaired and not see the colour change.
+
+### Email with instructions error
+
+```tsx
+<Field
+  label="Email address"
+  errorMessage="Enter an email address in the format: youremail@example.com"
+  hintMessage="Make sure your email address is correct as we will use it to confirm your account"
+>
+  <Input invalid size="large" className="w-6/12" />
+</Field>
+```
+
+### Email with confirm error
+
+```tsx
+() => {
+  const [email, setEmail] = useState('gel@westpac.com.au');
+  const [confirmEmail, setConfirmEmail] = useState('gel@westpacc.com.au');
+
+  return (
+    <Form spacing="large">
+      <FormGroup>
+        <Field label="Email address">
+          <Input
+            onChange={({ target: { value } }) => setEmail(value)}
+            value={email}
+            invalid
+            size="large"
+            className="w-6/12"
+          />
+        </Field>
+      </FormGroup>
+      <FormGroup>
+        <Field
+          label="Confirm email address"
+          errorMessage="Email addresses did not match. Please enter the same email address in both fields."
+        >
+          <Input
+            onChange={({ target: { value } }) => setConfirmEmail(value)}
+            value={confirmEmail}
+            invalid
+            size="large"
+            className="w-6/12"
+          />
+        </Field>
+      </FormGroup>
+    </Form>
+  );
+};
+```

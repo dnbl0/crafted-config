@@ -1,0 +1,17 @@
+- Button text complies with a minimum 4.5:1 colour contrast ratio against the adjacent colour (button background colour) – ref [1.4.3: Contrast (Minimum)](https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum)
+- Button boundary must comply with a minimum 3:1 colour contrast ratio against the adjacent colour (container/page background colour). Use the correct button depending on the container/page to ensure this requirement is met. – ref [1.4.11: Non-text Contrast](https://www.w3.org/WAI/WCAG21/quickref/#non-text-contrast)
+- An indicator outline appears around the button when focused
+- The mouse cursor uses a ‘pointer’ style when you mouse over (hover) to ensure consistent control affordance styling
+- Disabled buttons have ‘pointer-events: none’ CSS applied, preventing hover and active states from triggering
+- The button shape, text and icon content is visible in Windows High Contrast Mode (WHCM). The ‘look’ styling (colour) is not visible in WHCM.
+
+### Accessibility in the HTML
+
+- `<button>`&nbsp;/&nbsp;`<a>`: Identifies the element as a button (or link) element. Accessible name for the button is defined by the element’s text content. [React component: refer to&nbsp;*tag*&nbsp;prop]
+- `<a href="{URL}">`: Links styled to look like buttons must include an&nbsp;*href*. [React component: refer to&nbsp;*tag prop*&nbsp;and&nbsp;*href*&nbsp;attribute]
+- `<button aria-label="{BUTTON_LABEL}">` Optionally use aria-label attribute to set a custom label (if different to the button text). The overall meaning of the aria-label must be consistent with the visual button text to ensure an optimal experience for speech recognition software users (i.e. Dragon NaturallySpeaking)
+- `<svg aria-hidden="true">` Button icon elements have aria-hidden="true" to hide them from assistive technologies; they are visual embellishment. Generally the button text provides the button description, if this is not the case a custom label can be used which will be announced instead of the button text for screen reader users. [React component: refer to iconBefore and iconAfter props]
+
+### Keyboard support
+
+Keyboard users navigate buttons as they would with a standard button or link.

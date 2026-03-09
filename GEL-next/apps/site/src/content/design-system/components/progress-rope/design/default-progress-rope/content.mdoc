@@ -1,0 +1,34 @@
+The default progress rope is used for simple processes with only a small number of steps.
+
+```tsx
+() => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const handleClick = useCallback(
+    (index: number) => () => {
+      setActiveIndex(index);
+    },
+    [],
+  );
+  const PROGRESS_ROPE_DATA: ProgressRopeProps['data'] = [
+    { text: <h3>Step 1</h3>, onClick: handleClick(0) },
+    { text: <h3>Step 2</h3>, onClick: handleClick(1) },
+    { text: <h3>Step 3</h3>, onClick: handleClick(2) },
+    { text: <h3>Step 4</h3>, onClick: handleClick(3) },
+    { text: <h3>Step 5</h3>, onClick: handleClick(4) },
+    { text: <h3>Review and Submit</h3>, onClick: handleClick(5) },
+  ];
+
+  return (
+    <div>
+      <ProgressRope current={activeIndex} data={PROGRESS_ROPE_DATA} />
+      <Well className="p-2 sm:p-2 flex items-center">
+        <div className="mr-2 flex items-center space-x-1">
+          <Button iconBefore={ArrowLeftIcon} soft look="faint" size="small" onClick={() => setActiveIndex(state => --state)}>prev</Button>{' '}
+          <Button iconAfter={ArrowRightIcon} soft look="faint" size="small" onClick={() => setActiveIndex(state => ++state)}>next</Button>
+        </div>
+        <code className="flex">Current: {activeIndex}</code>
+      </Well>
+    </div>
+  );
+};
+```

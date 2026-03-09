@@ -1,0 +1,35 @@
+### Base pattern
+
+This pattern is defined as a ‘memorable date’, of which users will know the answer. Using hint text helps the user to understand the format, while the three separate boxes with Day, Month, Year labels removes ambiguity about which comes first, day or month. They also serve an important part in helping assistive technologies recognise and distinguish all three.
+
+```tsx
+<FormGroup>
+  <FormLabel>Date of birth</FormLabel>
+  <FormHint>Example: 31 3 1980</FormHint>
+  <fieldset className="flex gap-2">
+    <Field label="Day" labelSize="small">
+      <Input
+        type="number"
+        size="large"
+        pattern="[0-9]*"
+        min="1"
+        max="31"
+        autoComplete="bday-day"
+      />
+    </Field>
+    <Field label="Month" labelSize="small">
+      <Input
+        type="number"
+        size="large"
+        pattern="[0-9]*"
+        min="1"
+        max="12"
+        autoComplete="bday-month"
+      />
+    </Field>
+    <Field label="Year" labelSize="small">
+      <Input className="w-14" type="number" size="large" pattern="[0-9]*" autoComplete="bday-year" />
+    </Field>
+  </fieldset>
+</FormGroup>
+```

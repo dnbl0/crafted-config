@@ -1,0 +1,51 @@
+name: Logos
+description: >-
+  These logos and are commonly used in Westpac interfaces. They are implemented
+  as scalable vector graphics (SVGs) which ensures the highest quality rendering
+  on all devices. It also allows styling with code and complies with WGAG AA
+  accessibility requirements.
+namedExport:
+  discriminant: true
+  value:
+    name: Symbol
+excludeFromNavbar: false
+design:
+  - title:
+      name: Logos
+      slug: logos
+    noTitle: false
+    noDemo: false
+  - title:
+      name: User experience
+      slug: user-experience
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Visual design
+      slug: visual-design
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Dos and don’ts
+      slug: dos-and-donts
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Where is this available?
+      slug: where-is-this-available
+    noTitle: false
+    noDemo: true
+accessibility:
+  - title:
+      name: Accessibility features
+      slug: accessibility-features
+relatedComponents:
+  - title: Icons
+    slug: foundation/icon
+  - title: Symbols
+    slug: components/symbol
+code:
+  - title:
+      name: Development examples
+      slug: development-examples
+    noTitle: false

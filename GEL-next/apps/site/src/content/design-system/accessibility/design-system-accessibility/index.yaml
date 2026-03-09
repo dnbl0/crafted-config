@@ -1,0 +1,43 @@
+name: Design system accessibility
+description: >-
+  Accessibility is not just a box you tick at the end of a project, we have to
+  be diligent and aware of the impacts the decisions we make have at all stages
+  of product delivery. The following areas need to be considered when designing
+  for accessibility and inclusion.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: Principles of accessibility
+      slug: principles-of-accessibility
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Inclusive product design
+      slug: inclusive-product-design
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Inclusive content writing
+      slug: inclusive-content-writing
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Accessible interfaces
+      slug: accessible-interfaces
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Accessibility testing
+      slug: accessibility-testing
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Deprecated components
+      slug: deprecated-components
+    noTitle: false
+    noDemo: false
+accessibility: []
+relatedComponents: []
+code: []

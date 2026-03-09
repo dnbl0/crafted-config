@@ -1,0 +1,35 @@
+name: Help
+description: >-
+  Clear communication is vital in the jargon and complexity filled industry of
+  financial services.
+namedExport:
+  discriminant: false
+excludeFromNavbar: false
+design:
+  - title:
+      name: When do we need help text?
+      slug: when-do-we-need-help-text
+    noTitle: false
+    noDemo: false
+  - title:
+      name: Help text in forms
+      slug: help-text-in-forms
+    noTitle: false
+    noDemo: true
+  - title:
+      name: Using icons for help
+      slug: using-icons-for-help
+    noTitle: false
+    noDemo: true
+  - title:
+      name: Why use help text
+      slug: why-use-help-text
+    noTitle: false
+    noDemo: false
+accessibility: []
+relatedComponents:
+  - title: Popover
+    slug: /components/popover
+  - title: Icons
+    slug: /components/foundation/icons
+code: []

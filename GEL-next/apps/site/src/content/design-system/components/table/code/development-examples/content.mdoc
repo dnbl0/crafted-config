@@ -1,0 +1,215 @@
+### Default table
+
+```jsx
+<div>
+  <Table>
+    <TableCaption>
+      Table caption this table width is: <em>(100%)</em>
+    </TableCaption>
+    <TableHeader>
+      <TableHeaderRow>
+        <TableHeaderCell>Column 1</TableHeaderCell>
+        <TableHeaderCell>Column 2</TableHeaderCell>
+        <TableHeaderCell>Column 3</TableHeaderCell>
+      </TableHeaderRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>Cell 1</TableCell>
+        <TableCell>Cell 7</TableCell>
+        <TableCell>Cell 13</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 2</TableCell>
+        <TableCell>Cell 8</TableCell>
+        <TableCell>Cell 14</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 3</TableCell>
+        <TableCell>Cell 9</TableCell>
+        <TableCell>Cell 15</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 4</TableCell>
+        <TableCell>Cell 10</TableCell>
+        <TableCell>Cell 16</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 5</TableCell>
+        <TableCell>Cell 11</TableCell>
+        <TableCell>Cell 17</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 6</TableCell>
+        <TableCell>Cell 12</TableCell>
+        <TableCell>Cell 18</TableCell>
+      </TableRow>
+    </TableBody>
+    <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
+  </Table>
+</div>
+```
+
+### Table looks
+
+```jsx
+<div>
+  <h1 className="typography-body-10 mb-2 italic text-muted">Bordered</h1>
+  <Table bordered>
+    <TableCaption>
+      Table caption this table width is: <em>(100%)</em>
+    </TableCaption>
+    <TableHeader>
+      <TableHeaderRow>
+        <TableHeaderCell>Column 1</TableHeaderCell>
+        <TableHeaderCell>Column 2</TableHeaderCell>
+        <TableHeaderCell>Column 3</TableHeaderCell>
+      </TableHeaderRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>Cell 1</TableCell>
+        <TableCell>Cell 7</TableCell>
+        <TableCell>Cell 13</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 2</TableCell>
+        <TableCell>Cell 8</TableCell>
+        <TableCell>Cell 14</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 3</TableCell>
+        <TableCell>Cell 9</TableCell>
+        <TableCell>Cell 15</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 4</TableCell>
+        <TableCell>Cell 10</TableCell>
+        <TableCell>Cell 16</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 5</TableCell>
+        <TableCell>Cell 11</TableCell>
+        <TableCell>Cell 17</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 6</TableCell>
+        <TableCell>Cell 12</TableCell>
+        <TableCell>Cell 18</TableCell>
+      </TableRow>
+    </TableBody>
+    <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
+  </Table>
+  <h1 className="typography-body-10 mb-2 italic text-muted">Striped</h1>
+  <Table striped>
+    <TableCaption>
+      Table caption this table width is: <em>(100%)</em>
+    </TableCaption>
+    <TableHeader>
+      <TableHeaderRow>
+        <TableHeaderCell>Column 1</TableHeaderCell>
+        <TableHeaderCell>Column 2</TableHeaderCell>
+        <TableHeaderCell>Column 3</TableHeaderCell>
+      </TableHeaderRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>Cell 1</TableCell>
+        <TableCell>Cell 7</TableCell>
+        <TableCell>Cell 13</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 2</TableCell>
+        <TableCell>Cell 8</TableCell>
+        <TableCell>Cell 14</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 3</TableCell>
+        <TableCell>Cell 9</TableCell>
+        <TableCell>Cell 15</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 4</TableCell>
+        <TableCell>Cell 10</TableCell>
+        <TableCell>Cell 16</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 5</TableCell>
+        <TableCell>Cell 11</TableCell>
+        <TableCell>Cell 17</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 6</TableCell>
+        <TableCell>Cell 12</TableCell>
+        <TableCell>Cell 18</TableCell>
+      </TableRow>
+    </TableBody>
+    <TableFooter colspan={3}>Footer goes here and should colSpan all columns</TableFooter>
+  </Table>
+</div>
+```
+
+### Highlighted
+
+```jsx
+<div>
+  <Table>
+    <TableCaption>
+      Table caption this table width is: <em>(100%)</em>
+    </TableCaption>
+    <TableHeader>
+      <TableHeaderRow>
+        <TableHeaderCell>Column 1</TableHeaderCell>
+        <TableHeaderCell>Column 2</TableHeaderCell>
+        <TableHeaderCell>Column 3</TableHeaderCell>
+        <TableHeaderCell>Column 4</TableHeaderCell>
+        <TableHeaderCell>Column 5</TableHeaderCell>
+        <TableHeaderCell>Column 6</TableHeaderCell>
+      </TableHeaderRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>Cell 1</TableCell>
+        <TableCell>Cell 7</TableCell>
+        <TableCell>Cell 13</TableCell>
+        <TableCell>Cell 1</TableCell>
+        <TableCell>Cell 7</TableCell>
+        <TableCell>Cell 13</TableCell>
+      </TableRow>
+      <TableRow highlighted>
+        <TableCell>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</TableCell>
+        <TableCell>Odit eligendi quasi quo nihil quia reiciendis obcaecati nosTrum.</TableCell>
+        <TableCell>Rem saepe eos, modi perferendis.</TableCell>
+        <TableCell>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</TableCell>
+        <TableCell>Odit eligendi quasi quo nihil quia reiciendis obcaecati nosTrum.</TableCell>
+        <TableCell>Rem saepe eos, modi perferendis.</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 3</TableCell>
+        <TableCell>Cell 9</TableCell>
+        <TableCell>Cell 15</TableCell>
+        <TableCell>Cell 3</TableCell>
+        <TableCell>Cell 9</TableCell>
+        <TableCell>Cell 15</TableCell>
+      </TableRow>
+      <TableRow highlighted={[0, [2, 4]]}>
+        <TableCell>Cell 4</TableCell>
+        <TableCell>Cell 10</TableCell>
+        <TableCell>Cell 16</TableCell>
+        <TableCell>Cell 4</TableCell>
+        <TableCell>Cell 10</TableCell>
+        <TableCell>Cell 16</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>Cell 5</TableCell>
+        <TableCell>Cell 11</TableCell>
+        <TableCell>Cell 17</TableCell>
+        <TableCell>Cell 5</TableCell>
+        <TableCell>Cell 11</TableCell>
+        <TableCell>Cell 17</TableCell>
+      </TableRow>
+    </TableBody>
+    <TableFooter colspan={5}>Footer goes here and should colSpan all columns</TableFooter>
+  </Table>
+</div>
+```

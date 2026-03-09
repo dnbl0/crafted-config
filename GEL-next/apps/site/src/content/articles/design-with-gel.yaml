@@ -1,0 +1,15 @@
+name: Design with GEL
+cardTitle: Design with GEL
+description: >-
+  You’ve got grand ideas! You’re up to speed on all the latest AI, AR, VR, and
+  hardware technology. You’re excited to push the boundaries of what’s possible
+  and be on the cutting edge of the industry. How do you retain this enthusiasm
+  while designing with a design system?
+thumbnail:
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/design-with-gel-card.png\r"
+  alt: Illustration of post it notes
+smallDescription: Learn how to design digital applications within a large organisation.
+image:
+  src: "https://www.westpac.com.au/content/dam/public/gel/images/design-with-gel-hero.jpg\r"
+  alt: People pointing to a transparent whiteboard covered in post it notes.
+author: Mark Marshall

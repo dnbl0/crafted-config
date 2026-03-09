@@ -1,0 +1,149 @@
+The typographic scale has a limited set of type sizes that work together and help maintain a consistent type scale across all digital touch-points. Designers can use these sizes as they see fit however there are a few practical rules around the use of type sizes.
+
+```tsx
+() => {
+  const typographyScale = [{
+    className: 'typography-body-1',
+    fontSize: '60px',
+    rem: '3.75rem',
+
+  }, {
+    className: 'typography-body-2',
+    fontSize: '54px',
+    rem: '3.375rem',
+
+  }, {
+    className: 'typography-body-3',
+    fontSize: '48px',
+    rem: '3rem',    
+
+  }, {
+    className: 'typography-body-4',
+    fontSize: '42px',
+    rem: '2.625rem',    
+
+  }, {
+    className: 'typography-body-5',
+    fontSize: '36px',
+    rem: '2.25rem',    
+
+  }, {
+    className: 'typography-body-6',
+    fontSize: '30px',
+    rem: '1.875rem',    
+
+  }, {
+    className: 'typography-body-7',
+    fontSize: '24px',
+    rem: '1.5rem',    
+
+  }, {
+    className: 'typography-body-8',
+    fontSize: '18px',
+    rem: '1.125rem',    
+
+  }, {
+    className: 'typography-body-9',
+    fontSize: '16px',
+    rem: '1rem',    
+
+  }, {
+    className: 'typography-body-10',
+    fontSize: '14px',
+    rem: '0.875rem',    
+
+  }];
+  return <Table className="w-max sm:w-full whitespace-pre">
+      <TableCaption>GEL body typography tokens (Sans serif system font)</TableCaption>
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell className='w-100'>Text size</TableHeaderCell>
+          <TableHeaderCell>Token</TableHeaderCell>
+          <TableHeaderCell>Rem</TableHeaderCell>
+
+          <TableHeaderCell>Tailwind class</TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
+        {typographyScale.map(i => <TableRow key={i.className}>
+            <TableCell><span className={i.className}>{i.fontSize.replace('typography-', '')}</span></TableCell>
+            <TableCell>
+              <span className={i.className}>{i.className.replace('typography-', '')}</span>
+            </TableCell>
+            <TableCell>{i.rem}</TableCell>
+
+            <TableCell>{i.className}</TableCell>
+          </TableRow>)}
+      </TableBody>
+    </Table>;
+}
+```
+
+```tsx
+() => {
+  const typographyScale = [{
+    className: 'typography-brand-1',
+    fontSize: '60px',
+    rem: '3.75rem',
+
+  }, {
+    className: 'typography-brand-2',
+    fontSize: '54px',
+    rem: '3.375rem',
+
+  }, {
+    className: 'typography-brand-3',
+    fontSize: '48px',
+    rem: '3rem',    
+
+  }, {
+    className: 'typography-brand-4',
+    fontSize: '42px',
+    rem: '2.625rem',    
+
+  }, {
+    className: 'typography-brand-5',
+    fontSize: '36px',
+    rem: '2.25rem',    
+
+  }, {
+    className: 'typography-brand-6',
+    fontSize: '30px',
+    rem: '1.875rem',    
+
+  }, {
+    className: 'typography-brand-7',
+    fontSize: '24px',
+    rem: '1.5rem',    
+
+  }, {
+    className: 'typography-brand-8',
+    fontSize: '18px',
+    rem: '1.125rem',    
+
+  }];
+  return <Table className="w-max sm:w-full whitespace-pre">
+      <TableCaption>GEL brand typography tokens</TableCaption>
+      <TableHeader>
+        <TableHeaderRow>
+          <TableHeaderCell>Text size</TableHeaderCell>
+          <TableHeaderCell>Token</TableHeaderCell>
+          <TableHeaderCell>Rem</TableHeaderCell>
+
+          <TableHeaderCell>Tailwind class</TableHeaderCell>
+        </TableHeaderRow>
+      </TableHeader>
+      <TableBody>
+        {typographyScale.map(i => <TableRow key={i.className}>
+            <TableCell><span className={i.className}>{i.fontSize.replace('typography-', '')}</span></TableCell>
+            <TableCell>
+              <span className={i.className}>{i.className.replace('typography-', '')}</span>
+            </TableCell>
+            <TableCell>{i.rem}</TableCell>
+
+            <TableCell>{i.className}</TableCell>
+          </TableRow>)}
+      </TableBody>
+    </Table>;
+}
+```
