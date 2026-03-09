@@ -1,4 +1,39 @@
-components
+Summary
+Welcome
+Lexus Kit is a React components library for Lexus brand. It is based on Lexus DLS (design language system) library and directly integrated to Figma through it. Even though you may find it very similar to Toyota Kit it has some significant differences, especially with DLS approach. Here Lexus DLS plays role of source of truth and defines key tokens for component styles/appearance, where in the case with Toyota Kit, key tokens (CSS custom properties) are defined directly in the Kit library.
+
+Browse stories now by navigating to them in the sidebar. We recommend building UIs with a component-driven (CDD) process.
+
+Why not Atomic?
+It is important to highlight that we do not strictly attaching to Organic/Atomic design (which is starting with atomic components and ending with pages) as it is limiting our development and blocking/overcomplicating integrations with CMS based consumers which often require fundamental (atomic) injections. For example, Sitecore JSS Text, Link, Placeholder components need to be injected directly into what you may know as Atoms and Molecules and modify their behavior. Another problem is inability to identify what is really an atom. Like a Button component, it should represent some atomic structure, but we want to have centralised control over text inside it using Typography...
+
+Example
+By itself Typography is a complex pluggable organism which allow a lot of flexibility and control over how such fundamental thing is rendered: it allows to render icons, images and objects inside itself (using plugin system). With growth of the design system component complexity may slightly increase and decrease and continious discussion of why these or those atoms are reusing other atoms or molecules...
+
+This takes us to a situation where 3 levels just not enough for the component library to handle such complex organisms like a Search button, which can reuse an IconButton which is an extension of Button and SVGAnimatedIcon which is HTML tag with Typography (Button) and svg tag with animations (SVGAnimatedIcon). And search button used in SearchBar (molecule???), which used in MobileNavMenu and DesktopMenuBar (another molecule???), which are part of PrimaryNavigation (organism???) - a child of NavigationBlock (organism? template?). Levels can reuse themselves what the purpose of such a division? How to categorise all these elements? Let's not forget that the primary purpose of Atomic Design is to facilitate thinking about UIs in a more hierarchical, systematic way, rather than prescribing a strict taxonomy that every component must adhere to. It's okay if some components don't fit neatly into one category or another. So...
+
+Our strategy
+...So, instead of building and using atoms, molecules and organisms as a taxonomy, we keep them in mind to structure our UI, but slightly shift our design and development focus on CDD approach which doesn't dictate an hierarchy. In this component library we build components and compositions to enable consumers to compose required elements and inject (or plug-in) desired low level integrations easily without taking them through multiple levels of properties and abstractions. Having this flexibility consumers are able to pick their own strategy to build Organisms, Templates, Pages, Dashboards or what ever grouping abstractions they utilise in their own strategy and not necessary bundled with Organic or our model limitations.
+
+Sections
+We do not define strict component taxonomy, but want to group components in some way to avoid messing with just a sorted list. If you afraid of dependency loops, just run yarn build and Rollup with show you if you have created any so you know when you need to refactor your work. In addition to this (LexusKit information) section we separate the following 3 key story groups/sections (be mindful that they may match but not necessary are component groups). You can read more about selection/decision process in Component placing document.
+
+Components
+Uncategorised stories and components all together. You can group them in a reasonable way into folders by their "organismic" or business purpose, but if you find yourself reusing a component from matching parallel levels of folders move them level up until they become "naturally" visible for various sub-hierarchies. You should avoid, but you can also define reusable micro-hierarchies (helpers, utils) which ideally should not use further parallel nodes and be self-sufficient to prevent growths of the project complexity.
+
+Layouts
+⚠ IMPORTANT ⚠ This section ideally should not exist, and it is here only because we have found that Front End developers tend to build big monoliths which may be composed from various parts, but not reusable parts, more like parts which where split to just keep code shorter and more readable. We keen to maintain this thinking, but want to add more to it so engineers think if they need to take layout portion out of their component or they can reuse existing layout. This is also helpful from Figma level for designers to isolate Flex layouts into separate components and do not overcomplicate their token system by duplication of spacing and positioning tokens.
+
+Compositions are important to prevent props-drilling patterns when you need to allow deep usage of ReactNodes
+
+A group of stories which demonstrate basic usage of components which "enable" composition by providing placeholders. If you think in context of React framework here you should place all components which can accept known or unknown children and position them in a certain way (think layouts, flex boxes, grids, row with cells, tables, carousel containers, slide/tile containers)
+
+If components fits into both sections (think of Button) you need to place it by it's main logical/business function: If the main function is to position inner elements in a certain way it will go to Layouts, otherwise Components. Button, for example, can position inner elements, but it is not the main function of it, more likely it is a CTA (Click to Action) element. Where Carousel Container would be a Layout as it is positioning elements in a certain way and pagination will be a function of a separate Component. We've created these categories to teach people to build right compositions and split components in reusable way. If this rule doesn't work speak with the team and decide. The goal is to have minimum number of such discussions and if you find that you have a lot, merge both categories or create a new one.
+
+Compositions
+This section is not to group components at all, it is more to demonstrate how to use them in your consumer context. There is no place for new components in this section, use it just for demos, while keeping your components and their stories in the other sections. Example here would be a demo of how to build a Hero component with 3-5 other components of LexusKit.
+
+COMPONENTS
 
 Accordion
 Documentation
